@@ -3,11 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/loaderFragment">
+    app:startDestination="@id/onBoardingFragment">
 
     <fragment
         android:id="@+id/loaderFragment"
         android:name="com.home.cinema.fragments.LoaderFragment"
         android:label="LoaderFragment"
         tools:layout="@layout/fragment_loader" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.home.cinema.fragments.OnBoardingFragment"
+        android:label="OnBoardingFragment" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_loaderFragment"
+            app:destination="@id/loaderFragment" />
+    </fragment>
 </navigation>

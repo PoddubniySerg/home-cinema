@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="progress_bar_color">#FF3D3BFF</color>
-    <color name="app_name_color">#FF272727</color>
+    <color name="shown_app_name_text_color">#FF272727</color>
+    <color name="skip_text_color">#FFB5B5C9</color>
+    <color name="on_boarding_main_text_color">#FF272727</color>
 </resources>

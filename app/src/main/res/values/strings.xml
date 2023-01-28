@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">HomeCinema</string>
 
-    <string name="shown_app_name" translatable="false">Skillcinema</string>
     <string name="home_button_bottom_nav">Home</string>
+    <string name="skip">Skip</string>
+    <string name="message1" translatable="false">Узнавай\nо премьерах</string>
+    <string name="message2" translatable="false">Создавай\nколлекции</string>
+    <string name="message3" translatable="false">Делись\nс друзьями</string>
 </resources>
