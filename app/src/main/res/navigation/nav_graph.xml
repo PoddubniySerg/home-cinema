@@ -16,6 +16,10 @@
         android:label="OnBoardingFragment" >
         <action
             android:id="@+id/action_onBoardingFragment_to_loaderFragment"
-            app:destination="@id/loaderFragment" />
+            app:destination="@id/loaderFragment"
+            app:enterAnim="@anim/enter_slide_from_left_to_right"
+            app:exitAnim="@anim/exit_slide_from_right_to_left"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

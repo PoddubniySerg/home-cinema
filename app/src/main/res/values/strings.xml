@@ -3,7 +3,10 @@
 
     <string name="home_button_bottom_nav">Home</string>
     <string name="skip">Skip</string>
-    <string name="message1" translatable="false">Узнавай\nо премьерах</string>
-    <string name="message2" translatable="false">Создавай\nколлекции</string>
-    <string name="message3" translatable="false">Делись\nс друзьями</string>
+
+    <string-array name="on_boarding_messages">
+        <item>Find out\nby premieres</item>
+        <item>Create\ncollections</item>
+        <item>Share\nwith friends</item>
+    </string-array>
 </resources>
