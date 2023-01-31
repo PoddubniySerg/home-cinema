@@ -1,7 +1,9 @@
-package com.home.cinema.viewmodels
+package com.home.cinema.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.home.cinema.domain.usecases.CheckIfAppWasLaunchUseCase
+import com.home.cinema.domain.usecases.SetOnBoardingLaunchedUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,7 +13,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class OnBoardingViewModel @Inject constructor() : ViewModel() {
+open class OnBoardingViewModel @Inject constructor() : ViewModel() {
+
+    @Inject
+    protected lateinit var setOnBoardingLaunchedUseCase: SetOnBoardingLaunchedUseCase
+
+    @Inject
+    protected lateinit var checkIfAppWasLaunchUseCase: CheckIfAppWasLaunchUseCase
 
     private val _exitFromOnBoardingFlow = MutableStateFlow(false)
     val exitFromOnBoardingFlow = _exitFromOnBoardingFlow.asStateFlow()
@@ -21,6 +29,7 @@ class OnBoardingViewModel @Inject constructor() : ViewModel() {
 
     //    переходим от презентации с загрузке приложения
     fun exit() {
+        setOnBoardingLaunched()
         try {
             _exitFromOnBoardingFlow.value = true
         } catch (ex: Exception) {
@@ -32,7 +41,9 @@ class OnBoardingViewModel @Inject constructor() : ViewModel() {
     fun isFirstLaunch() {
         try {
             viewModelScope.launch {
-                _isFirstAppLaunchFlow.send(false)
+                _isFirstAppLaunchFlow.send(
+                    checkIfAppWasLaunchUseCase.execute().isFirstLaunch
+                )
             }
         } catch (ex: Exception) {
 //            Todo handle exception
@@ -40,8 +51,9 @@ class OnBoardingViewModel @Inject constructor() : ViewModel() {
     }
 
     //    сохраняем в репозитории информацию о том, что приложение уже было запущено
-    fun onBoardingWasLaunched() {
+    private fun setOnBoardingLaunched() {
         try {
+            setOnBoardingLaunchedUseCase.execute()
         } catch (ex: Exception) {
 //            Todo handle exception
         }

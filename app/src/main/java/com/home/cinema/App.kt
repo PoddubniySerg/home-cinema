@@ -1,11 +1,10 @@
 package com.home.cinema
 
-import android.app.Application
-import android.content.Context
+import com.home.cinema.data.DataApp
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App : Application() {
+class App : DataApp() {
 
     companion object {
 //        var context: Context? = null

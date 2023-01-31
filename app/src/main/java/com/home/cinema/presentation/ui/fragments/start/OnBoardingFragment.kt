@@ -1,4 +1,4 @@
-package com.home.cinema.fragments
+package com.home.cinema.presentation.ui.fragments.start
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -15,7 +15,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.home.cinema.R
 import com.home.cinema.databinding.FragmentOnBoardingBinding
-import com.home.cinema.viewmodels.OnBoardingViewModel
+import com.home.cinema.presentation.viewmodels.OnBoardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

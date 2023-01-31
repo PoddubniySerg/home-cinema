@@ -1,4 +1,4 @@
-package com.home.cinema.fragments
+package com.home.cinema.presentation.ui.fragments.start
 
 import android.os.Bundle
 import android.view.LayoutInflater

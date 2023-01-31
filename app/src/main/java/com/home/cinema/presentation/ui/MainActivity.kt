@@ -1,10 +1,11 @@
-package com.home.cinema
+package com.home.cinema.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.home.cinema.R
 import com.home.cinema.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/loaderFragment"
-        android:name="com.home.cinema.fragments.LoaderFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.start.LoaderFragment"
         android:label="LoaderFragment"
         tools:layout="@layout/fragment_loader" />
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.home.cinema.fragments.OnBoardingFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.start.OnBoardingFragment"
         android:label="OnBoardingFragment" >
         <action
             android:id="@+id/action_onBoardingFragment_to_loaderFragment"
