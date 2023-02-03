@@ -1,4 +1,4 @@
-package com.home.cinema.domain.repositories
+package com.home.cinema.domain.repositories.page.onboarding
 
 interface OnBoardingRepository {
 

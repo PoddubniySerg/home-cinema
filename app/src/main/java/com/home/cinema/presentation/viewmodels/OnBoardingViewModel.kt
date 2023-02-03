@@ -2,8 +2,8 @@ package com.home.cinema.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.home.cinema.domain.usecases.CheckIfAppWasLaunchUseCase
-import com.home.cinema.domain.usecases.SetOnBoardingLaunchedUseCase
+import com.home.cinema.domain.usecases.onboarding.CheckIfAppWasLaunchUseCase
+import com.home.cinema.domain.usecases.onboarding.SetOnBoardingLaunchedUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow

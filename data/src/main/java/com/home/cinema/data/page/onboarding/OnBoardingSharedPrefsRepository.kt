@@ -1,9 +1,10 @@
-package com.home.cinema.data.repositories
+package com.home.cinema.data.page.onboarding
 
 import android.content.Context
-import com.home.cinema.domain.repositories.OnBoardingRepository
+import com.home.cinema.data.DataApp
+import com.home.cinema.domain.repositories.page.onboarding.OnBoardingRepository
 
-class OnBoardingSharedPrefsRepository(context: Context) : OnBoardingRepository {
+class OnBoardingSharedPrefsRepository : OnBoardingRepository {
 
     companion object {
         const val SHARED_PREFS_NAME = "shared_prefs_name"
@@ -11,7 +12,7 @@ class OnBoardingSharedPrefsRepository(context: Context) : OnBoardingRepository {
     }
 
     private val sharedPreferences =
-        context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+        DataApp.getContext().getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
 
     override fun isAppWasLaunch(): Boolean {
         return sharedPreferences.getBoolean(ON_BOARDING_WAS_LAUNCHED, false)

@@ -1,6 +1,6 @@
-package com.home.cinema.domain.usecases
+package com.home.cinema.domain.usecases.onboarding
 
-import com.home.cinema.domain.repositories.OnBoardingRepository
+import com.home.cinema.domain.repositories.page.onboarding.OnBoardingRepository
 import javax.inject.Inject
 
 open class SetOnBoardingLaunchedUseCase @Inject constructor() {

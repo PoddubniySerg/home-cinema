@@ -1,7 +1,7 @@
-package com.home.cinema.domain.usecases
+package com.home.cinema.domain.usecases.onboarding
 
-import com.home.cinema.domain.models.results.onboarding.CheckIfAppWasLaunchResult
-import com.home.cinema.domain.repositories.OnBoardingRepository
+import com.home.cinema.domain.models.results.page.onboarding.CheckIfAppWasLaunchResult
+import com.home.cinema.domain.repositories.page.onboarding.OnBoardingRepository
 import javax.inject.Inject
 
 open class CheckIfAppWasLaunchUseCase @Inject constructor() {
