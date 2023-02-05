@@ -2,10 +2,20 @@
 <resources>
     <string name="home_button_bottom_nav">Домой</string>
     <string name="skip">Пропустить</string>
+    <string name="home_item_movies_all_button_text">Все</string>
 
     <string-array name="on_boarding_messages">
         <item>Узнавай\nо премьерах</item>
         <item>Создавай\nколлекции</item>
         <item>Делись\nс друзьями</item>
+    </string-array>
+
+    <string-array name="home_movie_collections_names">
+        <item>Премьеры</item>
+        <item>Популярное</item>
+        <item>Random</item>
+        <item>Random</item>
+        <item>Топ-250</item>
+        <item>Сериалы</item>
     </string-array>
 </resources>

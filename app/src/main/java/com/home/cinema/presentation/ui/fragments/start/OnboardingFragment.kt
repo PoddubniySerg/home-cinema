@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.home.cinema.R
-import com.home.cinema.databinding.FragmentOnBoardingBinding
+import com.home.cinema.databinding.OnboardingFragmentBinding
 import com.home.cinema.presentation.viewmodels.OnBoardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
@@ -22,10 +22,10 @@ import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class OnBoardingFragment @Inject constructor() : Fragment() {
+class OnboardingFragment @Inject constructor() : Fragment() {
 
     private val viewModel by activityViewModels<OnBoardingViewModel>()
-    private var _binding: FragmentOnBoardingBinding? = null
+    private var _binding: OnboardingFragmentBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +33,7 @@ class OnBoardingFragment @Inject constructor() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel.isFirstLaunch()
-        _binding = FragmentOnBoardingBinding.inflate(inflater, container, false)
+        _binding = OnboardingFragmentBinding.inflate(inflater, container, false)
         return _binding!!.root
     }
 
@@ -110,7 +110,7 @@ class OnBoardingFragment @Inject constructor() : Fragment() {
 
         override fun createFragment(position: Int): Fragment {
             // Return a NEW fragment instance in createFragment(int)
-            return ItemOnBoardingFragment.getInstance(
+            return ItemOnboardingFragment.getInstance(
                 items[position].posterId,
                 items[position].message,
                 isLastPage = position == items.size - 1

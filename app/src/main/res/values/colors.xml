@@ -14,4 +14,13 @@
     <color name="on_boarding_main_text_color">#FF272727</color>
     <color name="on_boarding_dots_selected_color">#FF121616</color>
     <color name="on_boarding_dots_default_color">#FFD9D9D9</color>
+    <color name="home_name_movies_list_text_color">#FF272727</color>
+    <color name="home_movie_poster_seen_background_color_gradient_start">#663D3BFF</color>
+    <color name="home_movie_poster_seen_background_color_gradient_end">#003D3BFF</color>
+    <color name="home_movie_poster_not_seen_background_color">#66B5B5C9</color>
+    <color name="home_movie_rating_background_color">#FF3D3BFF</color>
+    <color name="home_movie_rating_text_color">#FFFFFFFF</color>
+    <color name="home_movie_name_text_color">#FF272727</color>
+    <color name="home_movie_genres_text_color">#FF838390</color>
+    <color name="home_item_movies_all_button_text_color">#FF3D3BFF</color>
 </resources>

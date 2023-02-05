@@ -1,4 +1,4 @@
-package com.home.cinema.data.network.retrofit.dto
+package com.home.cinema.data.network.retrofit.dto.page.home
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

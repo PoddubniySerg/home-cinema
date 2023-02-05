@@ -5,19 +5,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.home.cinema.databinding.FragmentLoaderBinding
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.home.cinema.R
+import com.home.cinema.databinding.LoaderFragmentBinding
+import com.home.cinema.enums.States
+import com.home.cinema.presentation.viewmodels.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
-class LoaderFragment : Fragment() {
+@AndroidEntryPoint
+class LoaderFragment @Inject constructor() : Fragment() {
 
-    private var binding: FragmentLoaderBinding? = null
+    private val viewModel by activityViewModels<HomeViewModel>()
+    private var binding: LoaderFragmentBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoaderBinding.inflate(inflater, container, false)
+        binding = LoaderFragmentBinding.inflate(inflater, container, false)
         return binding!!.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.stateFlow.onEach { state ->
+            when (state) {
+                States.COMPLETE -> {
+                    findNavController().navigate(R.id.action_loaderFragment_to_homeFragment)
+                }
+                else -> {
+//                    TODO nothing
+                }
+            }
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+        viewModel.getCollections(resources.getStringArray(R.array.home_movie_collections_names))
     }
 
     override fun onDestroyView() {

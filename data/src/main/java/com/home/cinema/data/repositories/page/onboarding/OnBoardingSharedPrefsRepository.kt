@@ -1,4 +1,4 @@
-package com.home.cinema.data.page.onboarding
+package com.home.cinema.data.repositories.page.onboarding
 
 import android.content.Context
 import com.home.cinema.data.DataApp

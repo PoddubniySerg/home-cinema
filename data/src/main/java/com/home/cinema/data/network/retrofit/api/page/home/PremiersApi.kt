@@ -1,6 +1,6 @@
-package com.home.cinema.data.network.retrofit.api.home.page
+package com.home.cinema.data.network.retrofit.api.page.home
 
-import com.home.cinema.data.network.retrofit.dto.PremiersDto
+import com.home.cinema.data.network.retrofit.dto.page.home.PremiersDto
 import com.home.cinema.data.secret.Secret
 import retrofit2.Response
 import retrofit2.http.GET

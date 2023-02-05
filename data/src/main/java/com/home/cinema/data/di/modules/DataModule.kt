@@ -1,7 +1,7 @@
 package com.home.cinema.data.di.modules
 
-import com.home.cinema.data.page.home.HomePremiersRepository
-import com.home.cinema.data.page.onboarding.OnBoardingSharedPrefsRepository
+import com.home.cinema.data.repositories.page.home.HomePremiersRepository
+import com.home.cinema.data.repositories.page.onboarding.OnBoardingSharedPrefsRepository
 import com.home.cinema.domain.repositories.page.home.PremiersRepository
 import com.home.cinema.domain.repositories.page.onboarding.OnBoardingRepository
 import dagger.Module

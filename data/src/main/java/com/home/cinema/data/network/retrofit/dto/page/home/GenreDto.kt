@@ -1,4 +1,4 @@
-package com.home.cinema.data.network.retrofit.dto
+package com.home.cinema.data.network.retrofit.dto.page.home
 
 import com.home.cinema.domain.models.entities.page.home.GenreString
 import com.squareup.moshi.Json

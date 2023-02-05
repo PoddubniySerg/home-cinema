@@ -3,10 +3,20 @@
 
     <string name="home_button_bottom_nav">Home</string>
     <string name="skip">Skip</string>
+    <string name="home_item_movies_all_button_text">All</string>
 
     <string-array name="on_boarding_messages">
         <item>Find out\nby premieres</item>
         <item>Create\ncollections</item>
         <item>Share\nwith friends</item>
+    </string-array>
+
+    <string-array name="home_movie_collections_names">
+        <item>Premiers</item>
+        <item>Popular</item>
+        <item>Random</item>
+        <item>Random</item>
+        <item>Top-250</item>
+        <item>Serials</item>
     </string-array>
 </resources>

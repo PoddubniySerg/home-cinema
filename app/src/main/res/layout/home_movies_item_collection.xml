@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="26dp"
+    android:layout_marginTop="36dp"
+    app:layout_goneMarginTop="0dp">
+
+    <TextView
+        android:id="@+id/nameMovies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/graphik"
+        android:textColor="@color/home_name_movies_list_text_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Premiers" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAllMovies"
+        android:layout_width="24dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="26dp"
+        android:background="@null"
+        android:fontFamily="@font/graphik"
+        android:text="@string/home_item_movies_all_button_text"
+        android:textAllCaps="false"
+        android:textColor="@color/home_item_movies_all_button_text_color"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/moviePosters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameMovies"
+        app:layout_goneMarginTop="0dp"
+        tools:listitem="@layout/home_movie_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>

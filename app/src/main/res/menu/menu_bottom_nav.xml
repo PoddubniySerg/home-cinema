@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/loaderFragment"
-        android:icon="@drawable/home_icon_bottom_nav"
+        android:icon="@drawable/bottom_navigation_home_icon"
         android:title="@string/home_button_bottom_nav" />
 </menu>
