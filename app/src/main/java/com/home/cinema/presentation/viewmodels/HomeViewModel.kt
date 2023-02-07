@@ -41,11 +41,46 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
                                 )
                             )
                         }
-//                1 -> {}
-//                2 -> {}
-//                3 -> {}
-//                4 -> {}
-//                5 -> {}
+                1 -> {
+                    collections.add(
+                        HomeMoviesCollection(
+                            collectionNames[i],
+                            movies = getPremiers() ?: break
+                        )
+                    )
+                }
+                2 -> {
+                    collections.add(
+                        HomeMoviesCollection(
+                            collectionNames[i],
+                            movies = getPremiers() ?: break
+                        )
+                    )
+                }
+                3 -> {
+                    collections.add(
+                        HomeMoviesCollection(
+                            collectionNames[i],
+                            movies = getPremiers() ?: break
+                        )
+                    )
+                }
+                4 -> {
+                    collections.add(
+                        HomeMoviesCollection(
+                            collectionNames[i],
+                            movies = getPremiers() ?: break
+                        )
+                    )
+                }
+                5 -> {
+                    collections.add(
+                        HomeMoviesCollection(
+                            collectionNames[i],
+                            movies = getPremiers() ?: break
+                        )
+                    )
+                }
                         else -> break
                     }
                 }
