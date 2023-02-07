@@ -9,50 +9,86 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.home.cinema.R
-import com.home.cinema.databinding.HomeMovieItemBinding
+import com.home.cinema.databinding.HomeMoviesItemMovieBinding
+import com.home.cinema.databinding.HomeMoviesItemShowAllBinding
 import com.home.cinema.domain.models.entities.page.home.GenreString
 import com.home.cinema.domain.models.entities.page.home.Movie
 import java.util.*
 
 class HomeMovieItemAdapter(
-    val onItemPosterClick: (Movie) -> Unit
-) : ListAdapter<Movie, MovieViewHolder>(MovieDiffUtilCallback()) {
+    val onItemPosterClick: (Movie) -> Unit,
+    private val onClickAllButton: () -> Unit
+) : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffUtilCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return MovieViewHolder(
-            HomeMovieItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        when (viewType) {
+            R.layout.home_movies_item_movie -> {
+                return MovieViewHolder(
+                    HomeMoviesItemMovieBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
+            else -> {
+                return ShowAllViewHolder(
+                    HomeMoviesItemShowAllBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val item = getItem(position)
-        with(holder.binding) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is MovieViewHolder -> inflateMovie(position, holder.binding)
+            is ShowAllViewHolder -> inflateShowAllItem(holder.binding)
+        }
+    }
 
-            Glide.with(poster).load(item.posterUrlPreview ?: return@with).into(poster)
+    override fun getItemCount(): Int {
+        return super.getItemCount() + 1
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position < itemCount - 1) R.layout.home_movies_item_movie
+        else R.layout.home_movies_item_show_all
+    }
+
+    private fun inflateMovie(position: Int, binding: HomeMoviesItemMovieBinding) {
+        val movie = getItem(position)
+        with(binding) {
+            Glide.with(poster).load(movie.posterUrlPreview ?: return@with).into(poster)
 
             setIsSeenIcon(
-                isSeen = item.isSeen,
+                isSeen = movie.isSeen,
                 isSeenIcon = isSeenIcon,
                 posterView = poster
             )
 
             setRating(
-                rating = item.rating?.toString(),
+                rating = movie.rating?.toString(),
                 rateView = rating
             )
 
-            setNameMovie(item, nameMovie)
+            setNameMovie(movie, nameMovie)
 
-            setGenres(item.genres, genresMovie)
+            setGenres(movie.genres, genresMovie)
 
             root.setOnClickListener {
-                item?.let {
-                    onItemPosterClick(item)
-                }
+                onItemPosterClick(movie)
+            }
+        }
+    }
+
+    private fun inflateShowAllItem(binding: HomeMoviesItemShowAllBinding) {
+        with(binding) {
+            buttonShowAllMovies.setOnClickListener {
+                onClickAllButton.invoke()
             }
         }
     }
@@ -82,9 +118,21 @@ class HomeMovieItemAdapter(
     }
 
     private fun setNameMovie(movie: Movie, nameView: AppCompatTextView) {
-        nameView.text =
-            if (Locale.getDefault().language == "ru") movie.nameRu ?: movie.nameEn ?: "Unknown name"
-            else movie.nameEn ?: "Unknown name"
+
+        when (Locale.getDefault().language == "ru") {
+            true -> {
+                val name = movie.nameRu
+                nameView.text =
+                    if (name == null || name.isEmpty() || name.isBlank()) movie.nameEn ?: ""
+                    else name
+            }
+            false -> {
+                val name = movie.nameEn
+                nameView.text =
+                    if (name == null || name.isEmpty() || name.isBlank()) movie.nameRu ?: ""
+                    else name
+            }
+        }
     }
 
     private fun setGenres(genres: List<GenreString>?, genreView: AppCompatTextView) {
@@ -96,7 +144,10 @@ class HomeMovieItemAdapter(
     }
 }
 
-class MovieViewHolder(val binding: HomeMovieItemBinding) :
+class MovieViewHolder(val binding: HomeMoviesItemMovieBinding) :
+    RecyclerView.ViewHolder(binding.root)
+
+class ShowAllViewHolder(val binding: HomeMoviesItemShowAllBinding) :
     RecyclerView.ViewHolder(binding.root)
 
 class MovieDiffUtilCallback : DiffUtil.ItemCallback<Movie>() {

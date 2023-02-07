@@ -3,6 +3,7 @@
     <string name="home_button_bottom_nav">Домой</string>
     <string name="skip">Пропустить</string>
     <string name="home_item_movies_all_button_text">Все</string>
+    <string name="show_all_text_view">Показать все</string>
 
     <string-array name="on_boarding_messages">
         <item>Узнавай\nо премьерах</item>

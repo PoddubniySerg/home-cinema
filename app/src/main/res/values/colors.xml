@@ -23,4 +23,7 @@
     <color name="home_movie_name_text_color">#FF272727</color>
     <color name="home_movie_genres_text_color">#FF838390</color>
     <color name="home_item_movies_all_button_text_color">#FF3D3BFF</color>
+    <color name="home_item_movies_show_all_button_text_color">#FF272727</color>
+    <color name="home_item_movies_row_button_background_color">#FFFFFFFF</color>
+    <color name="home_item_movies_row_button_shadow_color">#29000000</color>
 </resources>

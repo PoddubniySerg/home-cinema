@@ -1,5 +1,6 @@
 package com.home.cinema.domain.usecases.home
 
+import com.home.cinema.domain.constants.Constants
 import com.home.cinema.domain.models.entities.page.home.Movie
 import com.home.cinema.domain.models.params.page.home.GetHomePremiersParam
 import com.home.cinema.domain.models.results.page.home.GetPremiersResult
@@ -14,27 +15,31 @@ open class GetPremiersUseCase @Inject constructor() {
     companion object {
         private const val DATE_FORMAT = "yyyy-MM-dd"
         private const val MAX_DAYS_PREMIERS = 14L
-        private const val MAX_SIZE_MOVIES_LIST = 20L
     }
 
     @Inject
     protected lateinit var premiersRepository: PremiersRepository
 
     suspend fun execute(): GetPremiersResult {
-        val dateFrom = LocalDate.now()
-        val dateTo = LocalDate.from(dateFrom.plusDays(MAX_DAYS_PREMIERS))
-        val formatter = DateTimeFormatter.ofPattern(DATE_FORMAT)
-        val movies = getPremiers(dateFrom, dateTo).stream()
-            .filter { movie ->
-                val date =
-                    movie.premiereRu?.let { dateString ->
-                        LocalDate.parse(dateString, formatter)
-                    }
-                (date != null) && (date > dateFrom) && (date < dateTo)
-            }
-            .limit(MAX_SIZE_MOVIES_LIST)
-            .toList()
-        return GetPremiersResult(movies)
+        try {
+            val dateFrom = LocalDate.now()
+            val dateTo = LocalDate.from(dateFrom.plusDays(MAX_DAYS_PREMIERS))
+            val formatter = DateTimeFormatter.ofPattern(DATE_FORMAT)
+            val movies = getPremiers(dateFrom, dateTo).stream()
+                .filter { movie ->
+                    val date =
+                        movie.premiereRu?.let { dateString ->
+                            LocalDate.parse(dateString, formatter)
+                        }
+                    (date != null) && (date > dateFrom) && (date < dateTo)
+                }
+                .limit(Constants.MAX_MOVIES_COLLECTION_SIZE)
+                .toList()
+            return GetPremiersResult(movies)
+        } catch (ex: Exception) {
+//            TODO handle exception
+            throw java.lang.RuntimeException("GetPremiersUseCase exception")
+        }
     }
 
     private suspend fun getPremiers(dateFrom: LocalDate, dateTo: LocalDate): List<Movie> {

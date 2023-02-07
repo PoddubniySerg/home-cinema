@@ -4,6 +4,7 @@
     <string name="home_button_bottom_nav">Home</string>
     <string name="skip">Skip</string>
     <string name="home_item_movies_all_button_text">All</string>
+    <string name="show_all_text_view">Show all</string>
 
     <string-array name="on_boarding_messages">
         <item>Find out\nby premieres</item>

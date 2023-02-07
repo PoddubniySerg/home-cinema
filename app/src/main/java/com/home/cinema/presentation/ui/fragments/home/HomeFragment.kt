@@ -46,7 +46,6 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
-        adapter = null
     }
 
     private fun onMovieClick(movie: Movie) {}

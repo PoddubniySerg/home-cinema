@@ -22,17 +22,19 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAllMovies"
-        android:layout_width="24dp"
-        android:layout_height="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         android:background="@null"
         android:fontFamily="@font/graphik"
+        android:minWidth="24dp"
+        android:minHeight="15dp"
         android:text="@string/home_item_movies_all_button_text"
         android:textAllCaps="false"
         android:textColor="@color/home_item_movies_all_button_text_color"
         android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nameMovies"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpUsage" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -42,9 +44,7 @@
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameMovies"
-        app:layout_goneMarginTop="0dp"
-        tools:listitem="@layout/home_movie_item" />
+        app:layout_constraintTop_toBottomOf="@+id/nameMovies"
+        tools:listitem="@layout/home_movies_item_movie" />
 </androidx.constraintlayout.widget.ConstraintLayout>
