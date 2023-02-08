@@ -51,11 +51,13 @@ class HomeMovieItemAdapter(
     }
 
     override fun getItemCount(): Int {
-        return super.getItemCount() + 1
+        val additionalElementsCount = 1
+        return super.getItemCount() + additionalElementsCount
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (position < itemCount - 1) R.layout.home_movies_item_movie
+        val lastIndexItems = itemCount - 1
+        return if (position < lastIndexItems) R.layout.home_movies_item_movie
         else R.layout.home_movies_item_show_all
     }
 

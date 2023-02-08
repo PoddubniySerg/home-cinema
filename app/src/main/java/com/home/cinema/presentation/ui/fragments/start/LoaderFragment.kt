@@ -32,8 +32,8 @@ class LoaderFragment @Inject constructor() : Fragment() {
         return binding!!.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onResume() {
+        super.onResume()
 
         viewModel.stateFlow.onEach { state ->
             when (state) {

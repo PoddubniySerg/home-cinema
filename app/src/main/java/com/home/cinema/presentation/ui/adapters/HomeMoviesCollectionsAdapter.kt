@@ -16,6 +16,8 @@ class HomeItemMoviesListAdapter(
     private val onClickAllButton: () -> Unit
 ) : ListAdapter<HomeMoviesCollection, MoviesViewHolder>(MoviesDiffUtilCallback()) {
 
+    private val viewPool = RecyclerView.RecycledViewPool()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         return MoviesViewHolder(
             HomeMoviesItemCollectionBinding.inflate(
@@ -39,9 +41,19 @@ class HomeItemMoviesListAdapter(
                 buttonAllMovies.setOnClickListener { onClickAllButton.invoke() }
             }
 
+            val lastIndexItems = itemCount - 1
+            if (position == lastIndexItems) {
+                val marginBottomDp = 84
+                val params = root.layoutParams as RecyclerView.LayoutParams
+                params.bottomMargin =
+                    marginBottomDp * root.context.resources.displayMetrics.density.toInt()
+                root.layoutParams = params
+            }
+
             nameMovies.text = item.name
 
-            if (moviePosters.adapter == null) moviePosters.adapter = postersAdapter
+            moviePosters.adapter = postersAdapter
+            moviePosters.setRecycledViewPool(viewPool)
             postersAdapter.submitList(item.movies)
         }
     }
