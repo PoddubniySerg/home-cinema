@@ -1,0 +1,1240 @@
+{
+  "total": 52,
+  "items": [
+    {
+      "kinopoiskId": 8403,
+      "nameRu": "Небо над Берлином",
+      "nameEn": "Der Himmel über Berlin",
+      "year": 1987,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/8403.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/8403.jpg",
+      "countries": [
+        {
+          "country": "Германия (ФРГ)"
+        },
+        {
+          "country": "Франция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "фэнтези"
+        },
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 130,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 5045951,
+      "nameRu": "О чем говорят мужчины. Простые удовольствия",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5045951.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5045951.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 93,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 4673172,
+      "nameRu": "Хищники",
+      "nameEn": "As bestas",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4673172.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4673172.jpg",
+      "countries": [
+        {
+          "country": "Испания"
+        },
+        {
+          "country": "Франция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "триллер"
+        },
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 137,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 1391083,
+      "nameRu": "Метки тьмы",
+      "nameEn": "A Savannah Haunting",
+      "year": 2021,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1391083.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1391083.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "ужасы"
+        }
+      ],
+      "duration": 105,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 4779051,
+      "nameRu": "Ведьма: Реинкарнация",
+      "nameEn": "Mal de ojo",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4779051.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4779051.jpg",
+      "countries": [
+        {
+          "country": "Мексика"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "ужасы"
+        }
+      ],
+      "duration": 100,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 5148129,
+      "nameRu": "Зомби: Из Пусана в Гангнам",
+      "nameEn": "Gangnamjombi",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5148129.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5148129.jpg",
+      "countries": [
+        {
+          "country": "Корея Южная"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "ужасы"
+        },
+        {
+          "genre": "боевик"
+        }
+      ],
+      "duration": 81,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 4477457,
+      "nameRu": "Черная метка",
+      "nameEn": "Black Warrant",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4477457.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4477457.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "боевик"
+        },
+        {
+          "genre": "триллер"
+        }
+      ],
+      "duration": 94,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 1438922,
+      "nameRu": "Лиза",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1438922.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1438922.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 95,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 5047485,
+      "nameRu": "Один настоящий день",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5047485.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5047485.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "триллер"
+        },
+        {
+          "genre": "криминал"
+        }
+      ],
+      "duration": 102,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 4502145,
+      "nameRu": "Сожги все мои письма",
+      "nameEn": "Bränn alla mina brev",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4502145.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4502145.jpg",
+      "countries": [
+        {
+          "country": "Швеция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 120,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 1415769,
+      "nameRu": "Гнев",
+      "nameEn": "The Anger",
+      "year": 2021,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1415769.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1415769.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        },
+        {
+          "country": "Ливан"
+        },
+        {
+          "country": "Германия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 125,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 5245365,
+      "nameRu": "Лёгкое знакомство",
+      "nameEn": "",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5245365.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5245365.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 99,
+      "premiereRu": "2023-02-02"
+    },
+    {
+      "kinopoiskId": 963343,
+      "nameRu": "Форма голоса",
+      "nameEn": "Koe no katachi",
+      "year": 2016,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/963343.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/963343.jpg",
+      "countries": [
+        {
+          "country": "Япония"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "аниме"
+        },
+        {
+          "genre": "мультфильм"
+        },
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 130,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 1412172,
+      "nameRu": "Заклятие Абизу",
+      "nameEn": "Abyzou",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1412172.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1412172.jpg",
+      "countries": [
+        {
+          "country": "США"
+        },
+        {
+          "country": "Великобритания"
+        },
+        {
+          "country": "Болгария"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "ужасы"
+        }
+      ],
+      "duration": 93,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 4682864,
+      "nameRu": "Быть",
+      "nameEn": "",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4682864.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4682864.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 114,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 4533254,
+      "nameRu": "Свободные отношения",
+      "nameEn": "",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4533254.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4533254.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "комедия"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 102,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 5005503,
+      "nameRu": "Знакомство родителей",
+      "nameEn": "Maybe I Do",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5005503.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5005503.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мелодрама"
+        },
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 95,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 4397196,
+      "nameRu": "Мой любимый призрак",
+      "nameEn": "Hui Buh und das Hexenschloss",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4397196.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4397196.jpg",
+      "countries": [
+        {
+          "country": "Германия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "фэнтези"
+        },
+        {
+          "genre": "комедия"
+        },
+        {
+          "genre": "приключения"
+        }
+      ],
+      "duration": 88,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 5118031,
+      "nameRu": "Эрнест и Селестина: Новые приключения",
+      "nameEn": "Ernest et Célestine, le voyage en Charabie",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5118031.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5118031.jpg",
+      "countries": [
+        {
+          "country": "Франция"
+        },
+        {
+          "country": "Люксембург"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мультфильм"
+        },
+        {
+          "genre": "приключения"
+        },
+        {
+          "genre": "семейный"
+        }
+      ],
+      "duration": 80,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 4397269,
+      "nameRu": "Больше чем никогда",
+      "nameEn": "Plus que jamais",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4397269.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4397269.jpg",
+      "countries": [
+        {
+          "country": "Франция"
+        },
+        {
+          "country": "Германия"
+        },
+        {
+          "country": "Люксембург"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 123,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 1403830,
+      "nameRu": "Проклятие черного паука",
+      "nameEn": "Die Schwarze Spinne",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1403830.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1403830.jpg",
+      "countries": [
+        {
+          "country": "Швейцария"
+        },
+        {
+          "country": "Венгрия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "триллер"
+        },
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 116,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 5106348,
+      "nameRu": "Братство четырёх «Л»",
+      "nameEn": "La guerre des Lulus",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5106348.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5106348.jpg",
+      "countries": [
+        {
+          "country": "Франция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "приключения"
+        }
+      ],
+      "duration": 109,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 5030860,
+      "nameRu": "Холодная гонка",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5030860.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5030860.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "приключения"
+        }
+      ],
+      "duration": 81,
+      "premiereRu": "2023-02-09"
+    },
+    {
+      "kinopoiskId": 1446792,
+      "nameRu": "Моя пиратская свадьба",
+      "nameEn": "Shotgun Wedding",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1446792.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1446792.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "боевик"
+        },
+        {
+          "genre": "мелодрама"
+        },
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 100,
+      "premiereRu": "2023-02-14"
+    },
+    {
+      "kinopoiskId": 5189350,
+      "nameRu": "Непослушная",
+      "nameEn": "",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5189350.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5189350.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 109,
+      "premiereRu": "2023-02-14"
+    },
+    {
+      "kinopoiskId": 4477095,
+      "nameRu": "Одиноки вместе",
+      "nameEn": "Alone Together",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4477095.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4477095.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 98,
+      "premiereRu": "2023-02-14"
+    },
+    {
+      "kinopoiskId": 4439671,
+      "nameRu": "Любовные штучки",
+      "nameEn": "Liebesdings",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4439671.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4439671.jpg",
+      "countries": [
+        {
+          "country": "Германия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мелодрама"
+        },
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 99,
+      "premiereRu": "2023-02-14"
+    },
+    {
+      "kinopoiskId": 1261977,
+      "nameRu": "После Янга",
+      "nameEn": "After Yang",
+      "year": 2021,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1261977.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1261977.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "фантастика"
+        },
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 96,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 4919766,
+      "nameRu": "Винни-Пух: Кровь и мёд",
+      "nameEn": "Winnie the Pooh: Blood and Honey",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4919766.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4919766.jpg",
+      "countries": [
+        {
+          "country": "Великобритания"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "ужасы"
+        }
+      ],
+      "duration": 84,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 4484927,
+      "nameRu": "Праведник",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4484927.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4484927.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "военный"
+        },
+        {
+          "genre": "история"
+        }
+      ],
+      "duration": 140,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 4756225,
+      "nameRu": "Снежная королева: Разморозка",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4756225.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4756225.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мультфильм"
+        },
+        {
+          "genre": "детский"
+        },
+        {
+          "genre": "приключения"
+        }
+      ],
+      "duration": 75,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 1038365,
+      "nameRu": "Любовь не купишь за деньги",
+      "nameEn": "Stan the Man",
+      "year": 2020,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1038365.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1038365.jpg",
+      "countries": [
+        {
+          "country": "США"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 97,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 4853632,
+      "nameRu": "Заклятье. Первое причастие",
+      "nameEn": "La Niña de la Comunión",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4853632.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4853632.jpg",
+      "countries": [
+        {
+          "country": "Испания"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "ужасы"
+        }
+      ],
+      "duration": 120,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 5129333,
+      "nameRu": "Снег, сестра и росомаха",
+      "nameEn": "",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5129333.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5129333.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 79,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 5034460,
+      "nameRu": "Тембот",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5034460.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5034460.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 82,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 5246539,
+      "nameRu": "Эта любовь",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5246539.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5246539.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "комедия"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 90,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 5253702,
+      "nameRu": "Женщины Алтая",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5253702.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5253702.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "документальный"
+        }
+      ],
+      "duration": 60,
+      "premiereRu": "2023-02-16"
+    },
+    {
+      "kinopoiskId": 4658173,
+      "nameRu": "Шехзада",
+      "nameEn": "Shehzada",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4658173.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4658173.jpg",
+      "countries": [
+        {
+          "country": "Индия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "боевик"
+        },
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 142,
+      "premiereRu": "2023-02-17"
+    },
+    {
+      "kinopoiskId": 18973,
+      "nameRu": "Револьвер",
+      "nameEn": "Revolver",
+      "year": 2005,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/18973.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/18973.jpg",
+      "countries": [
+        {
+          "country": "Великобритания"
+        },
+        {
+          "country": "Франция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "боевик"
+        },
+        {
+          "genre": "триллер"
+        },
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 111,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 194033,
+      "nameRu": "Тайна Келлс",
+      "nameEn": "The Secret of Kells",
+      "year": 2008,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/194033.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/194033.jpg",
+      "countries": [
+        {
+          "country": "Ирландия"
+        },
+        {
+          "country": "Бельгия"
+        },
+        {
+          "country": "Франция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мультфильм"
+        },
+        {
+          "genre": "фэнтези"
+        },
+        {
+          "genre": "приключения"
+        }
+      ],
+      "duration": 71,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 1088117,
+      "nameRu": "Рыцарь теней",
+      "nameEn": "Shen tan pu song ling zhi lan re xian zong",
+      "year": 2019,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1088117.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1088117.jpg",
+      "countries": [
+        {
+          "country": "Китай"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "фэнтези"
+        },
+        {
+          "genre": "боевик"
+        },
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 108,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 905033,
+      "nameRu": "Нюрнберг",
+      "nameEn": "Nurnberg",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/905033.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/905033.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        },
+        {
+          "country": "Германия"
+        },
+        {
+          "country": "Чехия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "история"
+        },
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "военный"
+        }
+      ],
+      "duration": 131,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 4472975,
+      "nameRu": "Сын",
+      "nameEn": "The Son",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4472975.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4472975.jpg",
+      "countries": [
+        {
+          "country": "Великобритания"
+        },
+        {
+          "country": "Франция"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 123,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 1346359,
+      "nameRu": "Бешенство",
+      "nameEn": "",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1346359.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1346359.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "триллер"
+        }
+      ],
+      "duration": null,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 1063008,
+      "nameRu": "Марлоу",
+      "nameEn": "Marlowe",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/1063008.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/1063008.jpg",
+      "countries": [
+        {
+          "country": "США"
+        },
+        {
+          "country": "Ирландия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "триллер"
+        },
+        {
+          "genre": "криминал"
+        },
+        {
+          "genre": "детектив"
+        }
+      ],
+      "duration": 110,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 4478041,
+      "nameRu": "Рок Дог 3: Битва за бит",
+      "nameEn": "Rock Dog 3 Battle the Beat",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4478041.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4478041.jpg",
+      "countries": [
+        {
+          "country": "США"
+        },
+        {
+          "country": "Китай"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "мультфильм"
+        },
+        {
+          "genre": "мелодрама"
+        },
+        {
+          "genre": "комедия"
+        }
+      ],
+      "duration": 90,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 4937051,
+      "nameRu": "Папы против мам",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4937051.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4937051.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "комедия"
+        },
+        {
+          "genre": "семейный"
+        }
+      ],
+      "duration": 102,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 5077317,
+      "nameRu": "Чекаго",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5077317.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5077317.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "криминал"
+        }
+      ],
+      "duration": null,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 4445895,
+      "nameRu": "8 комнат. Ключи Есенина",
+      "nameEn": "",
+      "year": 2020,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4445895.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4445895.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 52,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 5129306,
+      "nameRu": "Где проходит граница?",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5129306.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5129306.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "документальный"
+        }
+      ],
+      "duration": 70,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 5034461,
+      "nameRu": "Женя и Ваня на краю света",
+      "nameEn": "",
+      "year": 2022,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5034461.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5034461.jpg",
+      "countries": [
+        {
+          "country": "Россия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "документальный"
+        },
+        {
+          "genre": "драма"
+        }
+      ],
+      "duration": 46,
+      "premiereRu": "2023-02-23"
+    },
+    {
+      "kinopoiskId": 5248522,
+      "nameRu": "Italian Best Shorts 5: Жизнь как чудо",
+      "nameEn": "Italian Best Shorts 5",
+      "year": 2023,
+      "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5248522.jpg",
+      "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5248522.jpg",
+      "countries": [
+        {
+          "country": "Италия"
+        }
+      ],
+      "genres": [
+        {
+          "genre": "драма"
+        },
+        {
+          "genre": "мелодрама"
+        }
+      ],
+      "duration": 77,
+      "premiereRu": "2023-02-23"
+    }
+  ]
+}

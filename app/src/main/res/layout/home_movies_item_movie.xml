@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="111dp"
-    android:layout_height="wrap_content"
+    android:layout_height="235dp"
     android:layout_marginEnd="8dp"
     android:minHeight="194dp">
 
@@ -47,20 +47,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:textColor="@color/home_movie_name_text_color"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/poster"
         app:layout_goneMarginTop="0dp"
-        tools:text="Близкие" />
+        tools:text="Близкие Близкие Близкие" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/genresMovie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:textColor="@color/home_movie_genres_text_color"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameMovie"
-        tools:text="драма" />
+        tools:text="драма драма драма драма драма" />
 </androidx.constraintlayout.widget.ConstraintLayout>
