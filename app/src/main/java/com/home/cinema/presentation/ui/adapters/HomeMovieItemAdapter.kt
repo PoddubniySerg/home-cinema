@@ -73,7 +73,7 @@ class HomeMovieItemAdapter(
             )
 
             setRating(
-                rating = movie.rating?.toString(),
+                rating = movie.rating,
                 rateView = rating
             )
 
@@ -95,13 +95,10 @@ class HomeMovieItemAdapter(
         }
     }
 
-    private fun setRating(rating: String?, rateView: AppCompatTextView) {
+    private fun setRating(rating: Double?, rateView: AppCompatTextView) {
         if (rating == null) rateView.visibility = View.GONE
         else {
-            rateView.text = rating.substring(
-                startIndex = 0,
-                endIndex = rating.indexOf(char = '.', ignoreCase = true) + 1
-            )
+            rateView.text = String.format("%.1f", rating)
             rateView.visibility = View.VISIBLE
         }
     }

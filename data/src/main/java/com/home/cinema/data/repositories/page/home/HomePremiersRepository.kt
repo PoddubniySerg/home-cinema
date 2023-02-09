@@ -13,10 +13,10 @@ class HomePremiersRepository : PremiersRepository {
     private val retrofitInstance = RetrofitInstance()
 
     override suspend fun getPremiers(param: GetHomePremiersParam): List<Movie> {
-        val loader = retrofitInstance.getRetrofit(PremiersApi::class.java)
-        val response = loader.getPremiers(param.year, param.month)
-        return response.body()?.items
-            ?: throw NetworkResponseException("Code:${response.code()}, message: ${response.message()}")
-//        return MockPremiers().premiers
+//        val loader = retrofitInstance.getRetrofit(PremiersApi::class.java)
+//        val response = loader.getPremiers(param.year, param.month)
+//        return response.body()?.items
+//            ?: throw NetworkResponseException("Code:${response.code()}, message: ${response.message()}")
+        return MockPremiers().premiers
     }
 }
