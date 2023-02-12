@@ -9,7 +9,7 @@ open class CheckIfAppWasLaunchUseCase @Inject constructor() {
     @Inject
     protected lateinit var onBoardingRepository: OnBoardingRepository
 
-    fun execute(): CheckIfAppWasLaunchResult {
+    suspend fun execute(): CheckIfAppWasLaunchResult {
         return try {
             CheckIfAppWasLaunchResult(!onBoardingRepository.isAppWasLaunch())
         } catch (ex: java.lang.Exception) {

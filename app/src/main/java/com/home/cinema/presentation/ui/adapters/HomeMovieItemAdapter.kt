@@ -3,6 +3,7 @@ package com.home.cinema.presentation.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -64,12 +65,12 @@ class HomeMovieItemAdapter(
     private fun inflateMovie(position: Int, binding: HomeMoviesItemMovieBinding) {
         val movie = getItem(position)
         with(binding) {
-            Glide.with(poster).load(movie.posterUrlPreview ?: return@with).into(poster)
 
             setIsSeenIcon(
                 isSeen = movie.isSeen,
                 isSeenIcon = isSeenIcon,
-                posterView = poster
+                posterView = poster,
+                movie = movie
             )
 
             setRating(
@@ -102,18 +103,24 @@ class HomeMovieItemAdapter(
             rateView.visibility = View.VISIBLE
         }
     }
-
-    private fun setIsSeenIcon(isSeen: Boolean, isSeenIcon: View, posterView: View) {
-        when (isSeen) {
-            true -> {
-                posterView.setBackgroundResource(R.drawable.home_movie_poster_background_seen_layer_list)
+    private fun setIsSeenIcon(
+        isSeen: Boolean,
+        isSeenIcon: View,
+        posterView: AppCompatImageView,
+        movie: Movie
+    ) {
+        val placeHolderId =
+            if (isSeen) {
                 isSeenIcon.visibility = View.VISIBLE
-            }
-            false -> {
-                posterView.setBackgroundResource(R.color.home_movie_poster_not_seen_background_color)
+                R.drawable.home_movie_poster_background_place_holder_seen
+            } else {
                 isSeenIcon.visibility = View.GONE
+                R.drawable.home_movie_poster_background_place_holder_not_seen
             }
-        }
+        Glide.with(posterView)
+            .load(movie.posterUrlPreview ?: return)
+            .placeholder(placeHolderId)
+            .into(posterView)
     }
 
     private fun setNameMovie(movie: Movie, nameView: AppCompatTextView) {

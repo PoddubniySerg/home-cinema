@@ -13,8 +13,8 @@
         <action
             android:id="@+id/action_loaderFragment_to_homeFragment"
             app:destination="@id/homeFragment"
-            app:enterAnim="@anim/enter_slide_from_left_to_right"
-            app:exitAnim="@anim/exit_slide_from_right_to_left"
+            app:enterAnim="@anim/home_enter_slide_from_left_to_right"
+            app:exitAnim="@anim/home_exit_slide_from_right_to_left"
             app:popUpTo="@id/loaderFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -25,8 +25,8 @@
         <action
             android:id="@+id/action_onBoardingFragment_to_loaderFragment"
             app:destination="@id/loaderFragment"
-            app:enterAnim="@anim/enter_slide_from_left_to_right"
-            app:exitAnim="@anim/exit_slide_from_right_to_left"
+            app:enterAnim="@anim/onboarding_enter_slide_from_left_to_right"
+            app:exitAnim="@anim/onboarding_exit_slide_from_right_to_left"
             app:popUpTo="@id/onBoardingFragment"
             app:popUpToInclusive="true" />
     </fragment>

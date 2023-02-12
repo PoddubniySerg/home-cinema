@@ -8,7 +8,7 @@ open class SetOnBoardingLaunchedUseCase @Inject constructor() {
     @Inject
     protected lateinit var onBoardingRepository: OnBoardingRepository
 
-    fun execute() {
+    suspend fun execute() {
         try {
             onBoardingRepository.setOnBoardingLaunched()
         } catch (ex: java.lang.Exception) {

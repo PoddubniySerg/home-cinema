@@ -21,8 +21,8 @@ open class OnBoardingViewModel @Inject constructor() : ViewModel() {
     @Inject
     protected lateinit var checkIfAppWasLaunchUseCase: CheckIfAppWasLaunchUseCase
 
-    private val _exitFromOnBoardingFlow = MutableStateFlow(false)
-    val exitFromOnBoardingFlow = _exitFromOnBoardingFlow.asStateFlow()
+    private val _exitFromOnBoardingFlow = Channel<Boolean>()
+    val exitFromOnBoardingFlow = _exitFromOnBoardingFlow.receiveAsFlow()
 
     private val _isFirstAppLaunchFlow = Channel<Boolean>()
     val isFirstAppLaunchFlow = _isFirstAppLaunchFlow.receiveAsFlow()
@@ -31,7 +31,7 @@ open class OnBoardingViewModel @Inject constructor() : ViewModel() {
     fun exit() {
         setOnBoardingLaunched()
         try {
-            _exitFromOnBoardingFlow.value = true
+            viewModelScope.launch { _exitFromOnBoardingFlow.send(true) }
         } catch (ex: Exception) {
 //            Todo handle exception
         }
@@ -52,10 +52,12 @@ open class OnBoardingViewModel @Inject constructor() : ViewModel() {
 
     //    сохраняем в репозитории информацию о том, что приложение уже было запущено
     private fun setOnBoardingLaunched() {
-        try {
-            setOnBoardingLaunchedUseCase.execute()
-        } catch (ex: Exception) {
+        viewModelScope.launch {
+            try {
+                setOnBoardingLaunchedUseCase.execute()
+            } catch (ex: Exception) {
 //            Todo handle exception
+            }
         }
     }
 }

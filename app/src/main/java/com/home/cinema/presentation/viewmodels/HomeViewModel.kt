@@ -26,10 +26,11 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
     private val _collectionsFlow = Channel<List<HomeMoviesCollection>>()
     val collectionsFlow = _collectionsFlow.receiveAsFlow()
 
+    private val collections = mutableListOf<HomeMoviesCollection>()
+
     fun getCollections(collectionNames: Array<String>) {
         try {
             _stateFlow.value = States.LOADING
-            val collections = mutableListOf<HomeMoviesCollection>()
             viewModelScope.launch {
                 for (i in collectionNames.indices) {
                     when (i) {
@@ -41,50 +42,49 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
                                 )
                             )
                         }
-                1 -> {
-                    collections.add(
-                        HomeMoviesCollection(
-                            collectionNames[i],
-                            movies = getPremiers() ?: break
-                        )
-                    )
-                }
-                2 -> {
-                    collections.add(
-                        HomeMoviesCollection(
-                            collectionNames[i],
-                            movies = getPremiers() ?: break
-                        )
-                    )
-                }
-                3 -> {
-                    collections.add(
-                        HomeMoviesCollection(
-                            collectionNames[i],
-                            movies = getPremiers() ?: break
-                        )
-                    )
-                }
-                4 -> {
-                    collections.add(
-                        HomeMoviesCollection(
-                            collectionNames[i],
-                            movies = getPremiers() ?: break
-                        )
-                    )
-                }
-                5 -> {
-                    collections.add(
-                        HomeMoviesCollection(
-                            collectionNames[i],
-                            movies = getPremiers() ?: break
-                        )
-                    )
-                }
+                        1 -> {
+                            collections.add(
+                                HomeMoviesCollection(
+                                    collectionNames[i],
+                                    movies = getPremiers() ?: break
+                                )
+                            )
+                        }
+                        2 -> {
+                            collections.add(
+                                HomeMoviesCollection(
+                                    collectionNames[i],
+                                    movies = getPremiers() ?: break
+                                )
+                            )
+                        }
+                        3 -> {
+                            collections.add(
+                                HomeMoviesCollection(
+                                    collectionNames[i],
+                                    movies = getPremiers() ?: break
+                                )
+                            )
+                        }
+                        4 -> {
+                            collections.add(
+                                HomeMoviesCollection(
+                                    collectionNames[i],
+                                    movies = getPremiers() ?: break
+                                )
+                            )
+                        }
+                        5 -> {
+                            collections.add(
+                                HomeMoviesCollection(
+                                    collectionNames[i],
+                                    movies = getPremiers() ?: break
+                                )
+                            )
+                        }
                         else -> break
                     }
                 }
-                _collectionsFlow.send(collections.toList())
             }
         } catch (ex: Exception) {
 //            TODO exception handler
@@ -93,12 +93,22 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    private suspend fun getPremiers(): List<Movie>? {
+    fun getCollections() {
         try {
-            return getPremiersUseCase.execute().premiers
+            viewModelScope.launch {
+                _collectionsFlow.send(collections.toList())
+            }
         } catch (ex: Exception) {
 //            TODO exception handler
-            return null
+        }
+    }
+
+    private suspend fun getPremiers(): List<Movie>? {
+        return try {
+            getPremiersUseCase.execute().premiers
+        } catch (ex: Exception) {
+    //            TODO exception handler
+            null
         }
     }
 }

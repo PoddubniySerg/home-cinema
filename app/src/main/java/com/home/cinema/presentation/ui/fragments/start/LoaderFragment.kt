@@ -13,6 +13,7 @@ import com.home.cinema.databinding.LoaderFragmentBinding
 import com.home.cinema.enums.States
 import com.home.cinema.presentation.viewmodels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
@@ -38,6 +39,7 @@ class LoaderFragment @Inject constructor() : Fragment() {
         viewModel.stateFlow.onEach { state ->
             when (state) {
                 States.COMPLETE -> {
+                    delay(1000)
                     findNavController().navigate(R.id.action_loaderFragment_to_homeFragment)
                 }
                 else -> {

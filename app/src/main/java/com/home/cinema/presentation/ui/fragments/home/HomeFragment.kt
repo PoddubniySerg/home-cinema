@@ -41,6 +41,8 @@ class HomeFragment : Fragment() {
         viewModel.collectionsFlow.onEach {
             adapter?.submitList(it)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+        viewModel.getCollections()
     }
 
     override fun onDestroyView() {

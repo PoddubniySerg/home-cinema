@@ -2,7 +2,7 @@ package com.home.cinema.domain.repositories.page.onboarding
 
 interface OnBoardingRepository {
 
-    fun isAppWasLaunch(): Boolean
+    suspend fun isAppWasLaunch(): Boolean
 
-    fun setOnBoardingLaunched()
+    suspend fun setOnBoardingLaunched()
 }

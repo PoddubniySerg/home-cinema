@@ -32,12 +32,13 @@ class OnboardingFragment @Inject constructor() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel.isFirstLaunch()
+//        viewModel.isFirstLaunch()
         _binding = OnboardingFragmentBinding.inflate(inflater, container, false)
         return _binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         _binding!!.skipButton.setOnClickListener {
             viewModel.exit()
@@ -54,6 +55,11 @@ class OnboardingFragment @Inject constructor() : Fragment() {
             if (onBoardingIsFinished)
                 findNavController().navigate(R.id.action_onBoardingFragment_to_loaderFragment)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.isFirstLaunch()
     }
 
     override fun onDestroyView() {
