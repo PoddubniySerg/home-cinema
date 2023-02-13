@@ -6,5 +6,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class PremiersDto(
     @Json(name = "total") val total: Int?,
-    @Json(name = "items") val items: List<MovieDto>?
+    @Json(name = "items") val items: List<PremierMovieDto>?
 )

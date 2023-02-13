@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.home.cinema.databinding.HomeMoviesItemCollectionBinding
 import com.home.cinema.domain.constants.Constants
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.page.home.PremierMovie
 import com.home.cinema.model.HomeMoviesCollection
 
 class HomeItemMoviesListAdapter(
-    private val onItemPosterClick: (Movie) -> Unit,
+    private val onItemPosterClick: (PremierMovie) -> Unit,
     private val onClickAllButton: () -> Unit
 ) : ListAdapter<HomeMoviesCollection, MoviesViewHolder>(MoviesDiffUtilCallback()) {
 

@@ -2,15 +2,13 @@ package com.home.cinema.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.page.home.PremierMovie
 import com.home.cinema.domain.usecases.home.GetPremiersUseCase
 import com.home.cinema.enums.States
 import com.home.cinema.model.HomeMoviesCollection
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -27,6 +25,7 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
     val collectionsFlow = _collectionsFlow.receiveAsFlow()
 
     private val collections = mutableListOf<HomeMoviesCollection>()
+    private val collectionsAreReady = MutableStateFlow(false)
 
     fun getCollections(collectionNames: Array<String>) {
         try {
@@ -85,6 +84,7 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
                         else -> break
                     }
                 }
+                collectionsAreReady.value = true
             }
         } catch (ex: Exception) {
 //            TODO exception handler
@@ -95,19 +95,19 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
 
     fun getCollections() {
         try {
-            viewModelScope.launch {
-                _collectionsFlow.send(collections.toList())
-            }
+            collectionsAreReady.onEach { collectionsAreReady ->
+                if (collectionsAreReady) _collectionsFlow.send(collections.toList())
+            }.launchIn(viewModelScope)
         } catch (ex: Exception) {
 //            TODO exception handler
         }
     }
 
-    private suspend fun getPremiers(): List<Movie>? {
+    private suspend fun getPremiers(): List<PremierMovie>? {
         return try {
             getPremiersUseCase.execute().premiers
         } catch (ex: Exception) {
-    //            TODO exception handler
+            //            TODO exception handler
             null
         }
     }

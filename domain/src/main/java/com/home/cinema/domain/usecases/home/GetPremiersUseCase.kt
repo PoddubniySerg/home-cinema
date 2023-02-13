@@ -1,7 +1,7 @@
 package com.home.cinema.domain.usecases.home
 
 import com.home.cinema.domain.constants.Constants
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.page.home.PremierMovie
 import com.home.cinema.domain.models.params.page.home.GetHomePremiersParam
 import com.home.cinema.domain.models.results.page.home.GetPremiersResult
 import com.home.cinema.domain.repositories.page.home.PremiersRepository
@@ -42,8 +42,8 @@ open class GetPremiersUseCase @Inject constructor() {
         }
     }
 
-    private suspend fun getPremiers(dateFrom: LocalDate, dateTo: LocalDate): List<Movie> {
-        val movies = mutableListOf<Movie>()
+    private suspend fun getPremiers(dateFrom: LocalDate, dateTo: LocalDate): List<PremierMovie> {
+        val movies = mutableListOf<PremierMovie>()
         premiersRepository.getPremiers(
             GetHomePremiersParam(dateFrom.year, dateFrom.month.name.uppercase())
         )?.let { movies.addAll(it) }

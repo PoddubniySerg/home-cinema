@@ -32,7 +32,6 @@ class OnboardingFragment @Inject constructor() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        viewModel.isFirstLaunch()
         _binding = OnboardingFragmentBinding.inflate(inflater, container, false)
         return _binding!!.root
     }
@@ -57,8 +56,8 @@ class OnboardingFragment @Inject constructor() : Fragment() {
         }.launchIn(viewLifecycleOwner.lifecycleScope)
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
         viewModel.isFirstLaunch()
     }
 

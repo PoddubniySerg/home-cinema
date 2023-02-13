@@ -1,11 +1,11 @@
 package com.home.cinema.data.repositories.mocks.page.home
 
 import com.home.cinema.domain.models.entities.page.home.GenreString
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.page.home.PremierMovie
 
 class MockPremiers {
 
-    val premiers = listOf<Movie>(
+    val premiers = listOf<PremierMovie>(
 
         Premier(
             8403,
@@ -332,7 +332,7 @@ class MockPremiers {
         override val rating: Double?,
         override val premiereRu: String?,
         override val isSeen: Boolean
-    ) : Movie
+    ) : PremierMovie
 
     private class MockGenresStr(override val genre: String?) : GenreString
 }
