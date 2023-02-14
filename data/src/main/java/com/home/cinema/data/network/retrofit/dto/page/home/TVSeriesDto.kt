@@ -5,7 +5,8 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-class PopularDto(
-    @Json(name = "pagesCount") val pagesCount: Int,
-    @Json(name = "films") val films: List<PopularMovieDto>
+class TVSeriesDto(
+    @Json(name = "total") val total: Int,
+    @Json(name = "totalPages") val totalPages: Int,
+    @Json(name = "items") val films: List<TVSeriesMovieDto>
 )

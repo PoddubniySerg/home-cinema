@@ -3,7 +3,7 @@ package com.home.cinema.data.network.retrofit
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object RetrofitInstance {
+object NetworkStore {
 
     private const val BASE_URL = "https://kinopoiskapiunofficial.tech"
 
@@ -13,7 +13,7 @@ object RetrofitInstance {
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
 
-    fun <T> getRetrofit(className: Class<T>): T {
+    fun <T> getLoader(className: Class<T>): T {
         return retrofit.create(className)
     }
 }

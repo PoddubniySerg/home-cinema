@@ -38,13 +38,11 @@ open class OnBoardingViewModel @Inject constructor() : ViewModel() {
     }
 
     //    проверяем запускалось ли приложение раньше
-    fun isFirstLaunch() {
+    suspend fun isFirstLaunch() {
         try {
-            viewModelScope.launch {
-                _isFirstAppLaunchFlow.send(
-                    checkIfAppWasLaunchUseCase.execute().isFirstLaunch
-                )
-            }
+            _isFirstAppLaunchFlow.send(
+                checkIfAppWasLaunchUseCase.execute().isFirstLaunch
+            )
         } catch (ex: Exception) {
 //            Todo handle exception
         }

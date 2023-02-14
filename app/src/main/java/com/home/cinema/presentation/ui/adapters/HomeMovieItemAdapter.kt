@@ -13,13 +13,13 @@ import com.home.cinema.R
 import com.home.cinema.databinding.HomeMoviesItemMovieBinding
 import com.home.cinema.databinding.HomeMoviesItemShowAllBinding
 import com.home.cinema.domain.models.entities.page.home.GenreString
-import com.home.cinema.domain.models.entities.page.home.PremierMovie
+import com.home.cinema.domain.models.entities.page.home.Movie
 import java.util.*
 
 class HomeMovieItemAdapter(
-    val onItemPosterClick: (PremierMovie) -> Unit,
+    val onItemPosterClick: (Movie) -> Unit,
     private val onClickAllButton: () -> Unit
-) : ListAdapter<PremierMovie, RecyclerView.ViewHolder>(MovieDiffUtilCallback()) {
+) : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when (viewType) {
@@ -96,18 +96,19 @@ class HomeMovieItemAdapter(
         }
     }
 
-    private fun setRating(rating: Double?, rateView: AppCompatTextView) {
+    private fun setRating(rating: String?, rateView: AppCompatTextView) {
         if (rating == null) rateView.visibility = View.GONE
         else {
-            rateView.text = String.format("%.1f", rating)
+            rateView.text = rating
             rateView.visibility = View.VISIBLE
         }
     }
+
     private fun setIsSeenIcon(
         isSeen: Boolean,
         isSeenIcon: View,
         posterView: AppCompatImageView,
-        movie: PremierMovie
+        movie: Movie
     ) {
         val placeHolderId =
             if (isSeen) {
@@ -123,7 +124,7 @@ class HomeMovieItemAdapter(
             .into(posterView)
     }
 
-    private fun setNameMovie(movie: PremierMovie, nameView: AppCompatTextView) {
+    private fun setNameMovie(movie: Movie, nameView: AppCompatTextView) {
 
         when (Locale.getDefault().language == "ru") {
             true -> {
@@ -156,12 +157,12 @@ class MovieViewHolder(val binding: HomeMoviesItemMovieBinding) :
 class ShowAllViewHolder(val binding: HomeMoviesItemShowAllBinding) :
     RecyclerView.ViewHolder(binding.root)
 
-class MovieDiffUtilCallback : DiffUtil.ItemCallback<PremierMovie>() {
-    override fun areItemsTheSame(oldItem: PremierMovie, newItem: PremierMovie): Boolean {
+class MovieDiffUtilCallback : DiffUtil.ItemCallback<Movie>() {
+    override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: PremierMovie, newItem: PremierMovie): Boolean {
+    override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
         return oldItem.id == newItem.id
     }
 }

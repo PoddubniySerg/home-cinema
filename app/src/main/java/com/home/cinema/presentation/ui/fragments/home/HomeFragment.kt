@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.home.cinema.databinding.HomeFragmentBinding
-import com.home.cinema.domain.models.entities.page.home.PremierMovie
+import com.home.cinema.domain.models.entities.page.home.Movie
 import com.home.cinema.presentation.ui.adapters.HomeItemMoviesListAdapter
 import com.home.cinema.presentation.viewmodels.HomeViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -27,9 +27,8 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
         adapter = HomeItemMoviesListAdapter(
-            { movie -> onMovieClick(movie) },
-            { onClickAllButton() }
-        )
+            { movie -> onMovieClick(movie) }
+        ) { onClickAllButton() }
         return binding!!.root
     }
 
@@ -50,7 +49,7 @@ class HomeFragment : Fragment() {
         binding = null
     }
 
-    private fun onMovieClick(movie: PremierMovie) {}
+    private fun onMovieClick(movie: Movie) {}
 
     private fun onClickAllButton() {}
 }

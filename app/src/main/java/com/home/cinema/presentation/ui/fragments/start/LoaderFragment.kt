@@ -33,13 +33,19 @@ class LoaderFragment @Inject constructor() : Fragment() {
         return binding!!.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getCollections(resources.getStringArray(R.array.home_movie_collections_names))
+    }
+
     override fun onResume() {
         super.onResume()
 
         viewModel.stateFlow.onEach { state ->
             when (state) {
                 States.COMPLETE -> {
-                    delay(1000)
+                    delay(500)
                     findNavController().navigate(R.id.action_loaderFragment_to_homeFragment)
                 }
                 else -> {
@@ -47,8 +53,6 @@ class LoaderFragment @Inject constructor() : Fragment() {
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
-
-        viewModel.getCollections(resources.getStringArray(R.array.home_movie_collections_names))
     }
 
     override fun onDestroyView() {

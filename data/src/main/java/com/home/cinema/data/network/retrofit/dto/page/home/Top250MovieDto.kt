@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-class PopularMovieDto(
+class Top250MovieDto(
     @Json(name = "filmId") override val id: Int,
     @Json(name = "nameRu") override val nameRu: String?,
     @Json(name = "nameEn") override val nameEn: String?,

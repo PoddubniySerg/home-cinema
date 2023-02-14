@@ -17,7 +17,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "8.0",
             "2023-02-15",
             true
         ),
@@ -42,7 +42,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "3.0",
             "2023-02-15",
             false
         ),
@@ -56,7 +56,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "5.2",
             "2023-02-15",
             true
         ),
@@ -81,7 +81,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             false
         ),
@@ -95,7 +95,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             true
         ),
@@ -120,7 +120,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             false
         ),
@@ -134,7 +134,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             true
         ),
@@ -159,7 +159,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             false
         ),
@@ -175,7 +175,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             true
         ),
@@ -200,7 +200,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "7.2",
             "2023-02-15",
             false
         ),
@@ -214,7 +214,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "7.5",
             "2023-02-15",
             true
         ),
@@ -239,7 +239,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "7.7",
             "2023-02-15",
             false
         ),
@@ -253,7 +253,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "5.8",
             "2023-02-15",
             true
         ),
@@ -278,7 +278,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "6.1",
             "2023-02-15",
             false
         ),
@@ -292,7 +292,7 @@ class MockPremiers {
                 MockGenresStr("драма"),
                 MockGenresStr("мелодрама")
             ),
-            7.258,
+            "8.0",
             "2023-02-15",
             true
         ),
@@ -317,7 +317,7 @@ class MockPremiers {
                 MockGenresStr("триллер"),
                 MockGenresStr("драма")
             ),
-            7.258,
+            "7.2",
             "2023-02-15",
             false
         )
@@ -329,9 +329,9 @@ class MockPremiers {
         override val nameRu: String?,
         override val nameEn: String?,
         override val genres: List<GenreString>?,
-        override val rating: Double?,
+        override val rating: String?,
         override val premiereRu: String?,
-        override val isSeen: Boolean
+        override var isSeen: Boolean
     ) : PremierMovie
 
     private class MockGenresStr(override val genre: String?) : GenreString

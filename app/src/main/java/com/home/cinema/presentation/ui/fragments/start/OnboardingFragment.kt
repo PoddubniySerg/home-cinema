@@ -19,6 +19,7 @@ import com.home.cinema.presentation.viewmodels.OnBoardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -32,6 +33,20 @@ class OnboardingFragment @Inject constructor() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        viewModel.exitFromOnBoardingFlow.onEach { onBoardingIsFinished ->
+            if (onBoardingIsFinished)
+                findNavController().navigate(R.id.action_onBoardingFragment_to_loaderFragment)
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+        viewModel.isFirstAppLaunchFlow.onEach { isFirstAppLaunch ->
+            if (!isFirstAppLaunch) viewModel.exit()
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+        runBlocking {
+            viewModel.isFirstLaunch()
+        }
+
         _binding = OnboardingFragmentBinding.inflate(inflater, container, false)
         return _binding!!.root
     }
@@ -43,22 +58,7 @@ class OnboardingFragment @Inject constructor() : Fragment() {
             viewModel.exit()
         }
 
-        viewModel.isFirstAppLaunchFlow.onEach { isFirstAppLaunch ->
-            when (isFirstAppLaunch) {
-                true -> viewPagerInit()
-                false -> viewModel.exit()
-            }
-        }.launchIn(viewLifecycleOwner.lifecycleScope)
-
-        viewModel.exitFromOnBoardingFlow.onEach { onBoardingIsFinished ->
-            if (onBoardingIsFinished)
-                findNavController().navigate(R.id.action_onBoardingFragment_to_loaderFragment)
-        }.launchIn(viewLifecycleOwner.lifecycleScope)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        viewModel.isFirstLaunch()
+        viewPagerInit()
     }
 
     override fun onDestroyView() {
