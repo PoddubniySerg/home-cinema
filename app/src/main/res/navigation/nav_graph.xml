@@ -10,6 +10,9 @@
         android:name="com.home.cinema.presentation.ui.fragments.start.LoaderFragment"
         android:label="LoaderFragment"
         tools:layout="@layout/loader_fragment">
+        <argument
+            android:name="@string/bottom_navigation_is_hidden_nav_graph_argument"
+            android:defaultValue="true" />
         <action
             android:id="@+id/action_loaderFragment_to_homeFragment"
             app:destination="@id/homeFragment"
@@ -22,6 +25,9 @@
         android:id="@+id/onBoardingFragment"
         android:name="com.home.cinema.presentation.ui.fragments.start.OnboardingFragment"
         android:label="OnBoardingFragment">
+        <argument
+            android:name="@string/bottom_navigation_is_hidden_nav_graph_argument"
+            android:defaultValue="true" />
         <action
             android:id="@+id/action_onBoardingFragment_to_loaderFragment"
             app:destination="@id/loaderFragment"

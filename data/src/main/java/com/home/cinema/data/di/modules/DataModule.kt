@@ -1,14 +1,12 @@
 package com.home.cinema.data.di.modules
 
-import com.home.cinema.data.repositories.page.home.HomePopularRepository
-import com.home.cinema.data.repositories.page.home.HomePremiersRepository
-import com.home.cinema.data.repositories.page.home.HomeTVSeriesRepositoryImpl
-import com.home.cinema.data.repositories.page.home.HomeTop250RepositoryImpl
+import com.home.cinema.data.repositories.CountriesAndGenresRepositoryImpl
+import com.home.cinema.data.repositories.MovieBeenViewedRepositoryImpl
+import com.home.cinema.data.repositories.page.home.*
 import com.home.cinema.data.repositories.page.onboarding.OnBoardingSharedPrefsRepository
-import com.home.cinema.domain.repositories.page.home.HomeTVSeriesRepository
-import com.home.cinema.domain.repositories.page.home.HomeTop250Repository
-import com.home.cinema.domain.repositories.page.home.PopularRepository
-import com.home.cinema.domain.repositories.page.home.PremiersRepository
+import com.home.cinema.domain.repositories.page.CountriesAndGenresRepository
+import com.home.cinema.domain.repositories.page.MovieBeenViewedRepository
+import com.home.cinema.domain.repositories.page.home.*
 import com.home.cinema.domain.repositories.page.onboarding.OnBoardingRepository
 import dagger.Module
 import dagger.Provides
@@ -33,4 +31,16 @@ class DataModule {
 
     @Provides
     fun provideHomeTVSeriesRepository(): HomeTVSeriesRepository = HomeTVSeriesRepositoryImpl()
+
+    @Provides
+    fun provideHomeRandomCollectionRepository(): RandomCollectionRepository =
+        RandomCollectionRepositoryImpl()
+
+    @Provides
+    fun provideCountriesAndGenresRepository(): CountriesAndGenresRepository =
+        CountriesAndGenresRepositoryImpl()
+
+    @Provides
+    fun provideMovieBeenViewedRepository(): MovieBeenViewedRepository =
+        MovieBeenViewedRepositoryImpl()
 }

@@ -12,7 +12,7 @@ class Top250MovieDto(
     @Json(name = "genres") override val genres: List<GenreDto>?,
     @Json(name = "rating") override val rating: String?,
     @Json(name = "posterUrlPreview") override val posterUrlPreview: String?,
-    @Json(ignore = true) override var isSeen: Boolean = false,
+    @Json(ignore = true) override var seen: Boolean = false,
     @Json(name = "year") val year: Int?,
     @Json(name = "countries") val countries: List<CountryDto>?,
     @Json(name = "posterUrl") val posterUrl: String?,

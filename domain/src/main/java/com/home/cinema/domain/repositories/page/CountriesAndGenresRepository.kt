@@ -1,8 +1,8 @@
-package com.home.cinema.domain.repositories.page.home
+package com.home.cinema.domain.repositories.page
 
 import com.home.cinema.domain.models.entities.page.home.CountriesAndGenres
 
 interface CountriesAndGenresRepository {
 
-    fun getCountriesAndGenres(): CountriesAndGenres?
+    suspend fun getCountriesAndGenres(): CountriesAndGenres
 }

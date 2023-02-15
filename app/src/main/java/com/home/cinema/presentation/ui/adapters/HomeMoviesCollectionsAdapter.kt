@@ -43,7 +43,7 @@ class HomeItemMoviesListAdapter(
 
             val lastIndexItems = itemCount - 1
             if (position == lastIndexItems) {
-                val marginBottomDp = 84
+                val marginBottomDp = 74
                 val params = root.layoutParams as RecyclerView.LayoutParams
                 params.bottomMargin =
                     marginBottomDp * root.context.resources.displayMetrics.density.toInt()

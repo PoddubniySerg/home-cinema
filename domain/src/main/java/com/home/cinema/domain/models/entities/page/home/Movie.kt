@@ -7,5 +7,5 @@ interface Movie {
     val nameEn: String?
     val genres: List<GenreString>?
     val rating: String?
-    var isSeen: Boolean
+    var seen: Boolean
 }

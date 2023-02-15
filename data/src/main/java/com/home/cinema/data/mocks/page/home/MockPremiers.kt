@@ -1,4 +1,4 @@
-package com.home.cinema.data.repositories.mocks.page.home
+package com.home.cinema.data.mocks.page.home
 
 import com.home.cinema.domain.models.entities.page.home.GenreString
 import com.home.cinema.domain.models.entities.page.home.PremierMovie
@@ -331,7 +331,7 @@ class MockPremiers {
         override val genres: List<GenreString>?,
         override val rating: String?,
         override val premiereRu: String?,
-        override var isSeen: Boolean
+        override var seen: Boolean
     ) : PremierMovie
 
     private class MockGenresStr(override val genre: String?) : GenreString

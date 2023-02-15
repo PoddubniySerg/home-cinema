@@ -66,9 +66,9 @@ class HomeMovieItemAdapter(
         val movie = getItem(position)
         with(binding) {
 
-            setIsSeenIcon(
-                isSeen = movie.isSeen,
-                isSeenIcon = isSeenIcon,
+            setSeenIcon(
+                seen = movie.seen,
+                seenIcon = seenIcon,
                 posterView = poster,
                 movie = movie
             )
@@ -104,18 +104,18 @@ class HomeMovieItemAdapter(
         }
     }
 
-    private fun setIsSeenIcon(
-        isSeen: Boolean,
-        isSeenIcon: View,
+    private fun setSeenIcon(
+        seen: Boolean,
+        seenIcon: View,
         posterView: AppCompatImageView,
         movie: Movie
     ) {
         val placeHolderId =
-            if (isSeen) {
-                isSeenIcon.visibility = View.VISIBLE
+            if (seen) {
+                seenIcon.visibility = View.VISIBLE
                 R.drawable.home_movie_poster_background_place_holder_seen
             } else {
-                isSeenIcon.visibility = View.GONE
+                seenIcon.visibility = View.GONE
                 R.drawable.home_movie_poster_background_place_holder_not_seen
             }
         Glide.with(posterView)
