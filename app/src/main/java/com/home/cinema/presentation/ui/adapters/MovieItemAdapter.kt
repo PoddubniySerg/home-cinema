@@ -10,22 +10,22 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.home.cinema.R
-import com.home.cinema.databinding.HomeMoviesItemMovieBinding
-import com.home.cinema.databinding.HomeMoviesItemShowAllBinding
-import com.home.cinema.domain.models.entities.page.home.GenreString
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.databinding.MoviesItemMovieBinding
+import com.home.cinema.databinding.MoviesItemShowAllBinding
+import com.home.cinema.domain.models.entities.collections.movies.GenreString
+import com.home.cinema.domain.models.entities.collections.movies.Movie
 import java.util.*
 
-class HomeMovieItemAdapter(
-    val onItemPosterClick: (Movie) -> Unit,
+class MovieItemAdapter(
+    private val onItemPosterClick: (Movie) -> Unit,
     private val onClickAllButton: () -> Unit
 ) : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when (viewType) {
-            R.layout.home_movies_item_movie -> {
+            R.layout.movies_item_movie -> {
                 return MovieViewHolder(
-                    HomeMoviesItemMovieBinding.inflate(
+                    MoviesItemMovieBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
@@ -34,7 +34,7 @@ class HomeMovieItemAdapter(
             }
             else -> {
                 return ShowAllViewHolder(
-                    HomeMoviesItemShowAllBinding.inflate(
+                    MoviesItemShowAllBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
@@ -58,11 +58,11 @@ class HomeMovieItemAdapter(
 
     override fun getItemViewType(position: Int): Int {
         val lastIndexItems = itemCount - 1
-        return if (position < lastIndexItems) R.layout.home_movies_item_movie
-        else R.layout.home_movies_item_show_all
+        return if (position < lastIndexItems) R.layout.movies_item_movie
+        else R.layout.movies_item_show_all
     }
 
-    private fun inflateMovie(position: Int, binding: HomeMoviesItemMovieBinding) {
+    private fun inflateMovie(position: Int, binding: MoviesItemMovieBinding) {
         val movie = getItem(position)
         with(binding) {
 
@@ -88,7 +88,7 @@ class HomeMovieItemAdapter(
         }
     }
 
-    private fun inflateShowAllItem(binding: HomeMoviesItemShowAllBinding) {
+    private fun inflateShowAllItem(binding: MoviesItemShowAllBinding) {
         with(binding) {
             buttonShowAllMovies.setOnClickListener {
                 onClickAllButton.invoke()
@@ -113,10 +113,10 @@ class HomeMovieItemAdapter(
         val placeHolderId =
             if (seen) {
                 seenIcon.visibility = View.VISIBLE
-                R.drawable.home_movie_poster_background_place_holder_seen
+                R.drawable.movies_item_poster_background_place_holder_seen
             } else {
                 seenIcon.visibility = View.GONE
-                R.drawable.home_movie_poster_background_place_holder_not_seen
+                R.drawable.movies_item_poster_background_place_holder_not_seen
             }
         Glide.with(posterView)
             .load(movie.posterUrlPreview ?: return)
@@ -151,10 +151,10 @@ class HomeMovieItemAdapter(
     }
 }
 
-class MovieViewHolder(val binding: HomeMoviesItemMovieBinding) :
+class MovieViewHolder(val binding: MoviesItemMovieBinding) :
     RecyclerView.ViewHolder(binding.root)
 
-class ShowAllViewHolder(val binding: HomeMoviesItemShowAllBinding) :
+class ShowAllViewHolder(val binding: MoviesItemShowAllBinding) :
     RecyclerView.ViewHolder(binding.root)
 
 class MovieDiffUtilCallback : DiffUtil.ItemCallback<Movie>() {

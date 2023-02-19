@@ -9,7 +9,7 @@
         android:icon="@drawable/bottom_navigation_search_icon_selector"
         android:title="@string/search_button_bottom_nav" />
     <item
-        android:id="@+id/onBoardingFragment"
+        android:id="@+id/accountFragment"
         android:icon="@drawable/bottom_navigation_account_icon_selector"
         android:title="@string/account_button_bottom_nav" />
 </menu>

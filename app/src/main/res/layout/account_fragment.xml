@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="26dp">
+
+        <TextView
+            android:id="@+id/seenCollectionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/graphik"
+            android:text="@string/account_seen_collection_box_name"
+            android:textColor="@color/home_name_movies_list_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/countSeenMoviesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:background="@null"
+            android:fontFamily="@font/graphik"
+            android:minWidth="24dp"
+            android:minHeight="15dp"
+            android:textAllCaps="false"
+            android:textColor="@color/home_item_movies_all_button_text_color"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/seenCollectionName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpUsage"
+            tools:text="15  >" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/seenMoviesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seenCollectionName"
+            tools:listitem="@layout/movies_item_movie" />
+
+        <TextView
+            android:id="@+id/userCollectionsBoxName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/graphik"
+            android:text="@string/account_user_collections_box_name"
+            android:textColor="@color/home_name_movies_list_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seenMoviesRecyclerView" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/newCollectionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@null"
+            android:src="@drawable/account_item_collection_icon_new_collection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userCollectionsBoxName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/graphik"
+            android:text="@string/account_create_a_new_collection_text"
+            android:textColor="@color/account_new_collection_text_color"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/newCollectionButton"
+            app:layout_constraintStart_toEndOf="@id/newCollectionButton"
+            app:layout_constraintTop_toTopOf="@+id/newCollectionButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userCollectionsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/newCollectionButton"
+            app:spanCount="2"
+            tools:itemCount="3"
+            tools:listitem="@layout/account_item_collection" />
+
+        <TextView
+            android:id="@+id/wereInterestedCollectionsBoxName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/graphik"
+            android:text="@string/account_were_you_interested_collections_box_name"
+            android:textColor="@color/home_name_movies_list_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userCollectionsRecyclerView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/countWereInterestedMoviesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:background="@null"
+            android:fontFamily="@font/graphik"
+            android:minWidth="24dp"
+            android:minHeight="15dp"
+            android:textAllCaps="false"
+            android:textColor="@color/home_item_movies_all_button_text_color"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/wereInterestedCollectionsBoxName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpUsage"
+            tools:text="15  >" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wereInterestedRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="61dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wereInterestedCollectionsBoxName"
+            tools:listitem="@layout/movies_item_movie" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

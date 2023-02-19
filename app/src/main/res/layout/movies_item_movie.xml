@@ -13,9 +13,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/home_movie_poster_background_place_holder_not_seen"
+        tools:background="@drawable/movies_item_poster_background_place_holder_not_seen"
         tools:ignore="ContentDescription"
-        tools:src="@drawable/home_movie_poster_background_place_holder_seen" />
+        tools:src="@drawable/movies_item_poster_background_place_holder_seen" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/seenIcon"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/home_movie_seen_icon"
+        android:src="@drawable/movies_item_seen_icon"
         app:layout_constraintBottom_toBottomOf="@+id/poster"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -33,7 +33,7 @@
         android:layout_height="10dp"
         android:layout_gravity="end"
         android:layout_margin="6dp"
-        android:background="@drawable/home_movie_rating_background_shape"
+        android:background="@drawable/movies_item_rating_background_shape"
         android:gravity="center"
         android:textColor="@color/home_movie_rating_text_color"
         android:textSize="6dp"

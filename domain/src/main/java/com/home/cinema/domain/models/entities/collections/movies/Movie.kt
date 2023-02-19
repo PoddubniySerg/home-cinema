@@ -1,4 +1,4 @@
-package com.home.cinema.domain.models.entities.page.home
+package com.home.cinema.domain.models.entities.collections.movies
 
 interface Movie {
     val id: Int

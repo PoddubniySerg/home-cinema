@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="146dp"
+    android:layout_height="146dp"
+    android:layout_margin="16dp"
+    android:background="@drawable/account_item_collection_background_shape">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/removeCollectionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@null"
+        android:src="@drawable/account_item_collection_icon_remove_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        tools:src="@drawable/account_item_collection_icon_custom" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameCollectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/graphik"
+        android:textColor="@color/account_item_collection_name_text_color"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        tools:text="Russian films" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/moviesCounterCollectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/account_item_collection_counter_background_shape"
+        android:fontFamily="@font/graphik"
+        android:gravity="center"
+        android:textColor="@color/account_item_collection_counter_text_color"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameCollectionTextView"
+        tools:ignore="SmallSp"
+        tools:text="105" />
+</androidx.constraintlayout.widget.ConstraintLayout>

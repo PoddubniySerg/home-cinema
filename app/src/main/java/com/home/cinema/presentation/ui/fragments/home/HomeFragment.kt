@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.home.cinema.databinding.HomeFragmentBinding
-import com.home.cinema.domain.models.entities.page.home.Movie
-import com.home.cinema.presentation.ui.adapters.HomeItemMoviesListAdapter
+import com.home.cinema.domain.models.entities.collections.movies.Movie
+import com.home.cinema.presentation.ui.adapters.MoviesCollectionsAdapter
 import com.home.cinema.presentation.viewmodels.HomeViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -18,7 +18,7 @@ class HomeFragment : Fragment() {
 
     private val viewModel by activityViewModels<HomeViewModel>()
     private var binding: HomeFragmentBinding? = null
-    private var adapter: HomeItemMoviesListAdapter? = null
+    private var adapter: MoviesCollectionsAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,9 +26,10 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
-        adapter = HomeItemMoviesListAdapter(
-            { movie -> onMovieClick(movie) }
-        ) { onClickAllButton() }
+        adapter = MoviesCollectionsAdapter(
+            { movie -> onMovieClick(movie) },
+            { onClickAllButton() }
+        )
         return binding!!.root
     }
 

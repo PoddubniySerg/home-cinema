@@ -2,7 +2,7 @@ package com.home.cinema.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.collections.movies.Movie
 import com.home.cinema.domain.usecases.MovieCheckBeenViewedUseCase
 import com.home.cinema.domain.usecases.home.*
 import com.home.cinema.enums.States

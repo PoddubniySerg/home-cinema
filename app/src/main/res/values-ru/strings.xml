@@ -3,9 +3,15 @@
     <string name="home_button_bottom_nav">Домой</string>
     <string name="search_button_bottom_nav">Найти</string>
     <string name="account_button_bottom_nav">Аккаунт</string>
-    <string name="skip">Пропустить</string>
-    <string name="home_item_movies_all_button_text">Все</string>
-    <string name="show_all_text_view">Показать все</string>
+    <string name="onboarding_skip">Пропустить</string>
+    <string name="movies_collection_item_all_button_text">Все</string>
+    <string name="movies_show_all_item_text_view">Показать все</string>
+    <string name="account_seen_collection_box_name">Просмотрено</string>
+    <string name="account_user_collections_box_name">Коллекции</string>
+    <string name="account_create_a_new_collection_text">Создать свою коллекцию</string>
+    <string name="account_were_you_interested_collections_box_name">Вам было интересно</string>
+    <string name="account_favorite_collection_name">Любимые</string>
+    <string name="account_will_watch_collection_name">Хочу посмотреть</string>
 
     <string-array name="on_boarding_messages">
         <item>Узнавай\nо премьерах</item>

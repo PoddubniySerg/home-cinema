@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.home.cinema.databinding.HomeMoviesItemCollectionBinding
+import com.home.cinema.databinding.MoviesItemCollectionBinding
 import com.home.cinema.domain.constants.Constants
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.collections.movies.Movie
 import com.home.cinema.model.HomeMoviesCollection
 
-class HomeItemMoviesListAdapter(
+class MoviesCollectionsAdapter(
     private val onItemPosterClick: (Movie) -> Unit,
     private val onClickAllButton: () -> Unit
 ) : ListAdapter<HomeMoviesCollection, MoviesViewHolder>(MoviesDiffUtilCallback()) {
@@ -20,7 +20,7 @@ class HomeItemMoviesListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         return MoviesViewHolder(
-            HomeMoviesItemCollectionBinding.inflate(
+            MoviesItemCollectionBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -30,7 +30,7 @@ class HomeItemMoviesListAdapter(
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
         val item = getItem(position)
-        val postersAdapter = HomeMovieItemAdapter(onItemPosterClick, onClickAllButton)
+        val postersAdapter = MovieItemAdapter(onItemPosterClick, onClickAllButton)
         with(holder.binding) {
             if (item.movies.size < Constants.MAX_MOVIES_COLLECTION_SIZE) {
                 buttonAllMovies.visibility = View.GONE
@@ -59,7 +59,7 @@ class HomeItemMoviesListAdapter(
     }
 }
 
-class MoviesViewHolder(val binding: HomeMoviesItemCollectionBinding) :
+class MoviesViewHolder(val binding: MoviesItemCollectionBinding) :
     RecyclerView.ViewHolder(binding.root)
 
 class MoviesDiffUtilCallback : DiffUtil.ItemCallback<HomeMoviesCollection>() {

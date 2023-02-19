@@ -1,6 +1,6 @@
 package com.home.cinema.model
 
-import com.home.cinema.domain.models.entities.page.home.Movie
+import com.home.cinema.domain.models.entities.collections.movies.Movie
 
 class HomeMoviesCollection(
     val name: String,

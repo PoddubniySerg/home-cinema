@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="bottom_navigation_background_color">#FFFFFFFF</color>
     <color name="progress_bar_color">#FF3D3BFF</color>
     <color name="shown_app_name_text_color">#FF272727</color>
     <color name="skip_text_color">#FFB5B5C9</color>
@@ -26,4 +27,10 @@
     <color name="home_item_movies_show_all_button_text_color">#FF272727</color>
     <color name="home_item_movies_row_button_background_color">#FFFFFFFF</color>
     <color name="home_item_movies_row_button_shadow_color">#29000000</color>
+    <color name="account_item_collection_background_border_color">#FF000000</color>
+    <color name="account_item_collection_background_background_color">#FFFFFFFF</color>
+    <color name="account_item_collection_name_text_color">#FF272727</color>
+    <color name="account_item_collection_counter_background_color">#FF3D3BFF</color>
+    <color name="account_item_collection_counter_text_color">#FFFFFFFF</color>
+    <color name="account_new_collection_text_color">#FF272727</color>
 </resources>

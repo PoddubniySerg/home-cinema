@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appLogoText"
@@ -24,6 +23,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appLogoText"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/home_movies_item_collection" />
+        tools:listitem="@layout/movies_item_collection" />
 </androidx.constraintlayout.widget.ConstraintLayout>

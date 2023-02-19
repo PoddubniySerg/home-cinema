@@ -1,6 +1,6 @@
-package com.home.cinema.data.mocks.page.home
+package com.home.cinema.data.mocks
 
-import com.home.cinema.domain.models.entities.page.home.GenreString
+import com.home.cinema.domain.models.entities.collections.movies.GenreString
 import com.home.cinema.domain.models.entities.page.home.PremierMovie
 
 class MockPremiers {

@@ -10,11 +10,11 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center"
-        android:background="@drawable/home_item_movies_row_button_foreground"
+        android:background="@drawable/movies_item_show_all_button_foreground"
         android:elevation="10dp"
         android:gravity="center"
         android:padding="18dp"
-        android:src="@drawable/home_item_movies_row_icon" />
+        android:src="@drawable/movies_item_show_all_button_row_icon" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/graphik"
         android:gravity="center"
-        android:text="@string/show_all_text_view"
+        android:text="@string/movies_show_all_item_text_view"
         android:textColor="@color/home_item_movies_show_all_button_text_color"
         android:textSize="12sp" />
 </androidx.appcompat.widget.LinearLayoutCompat>
