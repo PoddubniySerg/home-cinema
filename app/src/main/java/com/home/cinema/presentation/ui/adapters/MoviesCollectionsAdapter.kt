@@ -3,9 +3,12 @@ package com.home.cinema.presentation.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.home.cinema.R
 import com.home.cinema.databinding.MoviesItemCollectionBinding
 import com.home.cinema.domain.constants.Constants
 import com.home.cinema.domain.models.entities.collections.movies.Movie
@@ -53,6 +56,16 @@ class MoviesCollectionsAdapter(
             nameMovies.text = item.name
 
             moviePosters.adapter = postersAdapter
+            val verticalDividerItemDecoration =
+                DividerItemDecoration(moviePosters.context, RecyclerView.HORIZONTAL)
+            verticalDividerItemDecoration.setDrawable(
+                ResourcesCompat.getDrawable(
+                    moviePosters.resources,
+                    R.drawable.movies_item_divider,
+                    moviePosters.context.theme
+                )!!
+            )
+            moviePosters.addItemDecoration(verticalDividerItemDecoration)
             moviePosters.setRecycledViewPool(viewPool)
             postersAdapter.submitList(item.movies)
         }

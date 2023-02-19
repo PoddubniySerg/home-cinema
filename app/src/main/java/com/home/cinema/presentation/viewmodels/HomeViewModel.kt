@@ -45,65 +45,7 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
 
     fun getCollections(collectionNames: Array<String>) {
         try {
-            _stateFlow.value = States.LOADING
-            viewModelScope.launch {
-                for (i in collectionNames.indices) {
-                    when (i) {
-                        0 -> {
-                            collections.add(
-                                HomeMoviesCollection(
-                                    collectionNames[i],
-                                    movies = getPremiers() ?: break
-                                )
-                            )
-                        }
-                        1 -> {
-                            collections.add(
-                                HomeMoviesCollection(
-                                    collectionNames[i],
-                                    movies = getPopular() ?: break
-                                )
-                            )
-                        }
-                        2 -> {
-                            val collection = getRandomCollectionUseCase.execute()
-                            collections.add(
-                                HomeMoviesCollection(
-                                    collection.name,
-                                    movies = checkMoviesBeenViewed(collection.movies) ?: break
-                                )
-                            )
-                        }
-                        3 -> {
-                            val collection = getRandomCollectionUseCase.execute()
-                            collections.add(
-                                HomeMoviesCollection(
-                                    collection.name,
-                                    movies = checkMoviesBeenViewed(collection.movies) ?: break
-                                )
-                            )
-                        }
-                        4 -> {
-                            collections.add(
-                                HomeMoviesCollection(
-                                    collectionNames[i],
-                                    movies = getTop250() ?: break
-                                )
-                            )
-                        }
-                        5 -> {
-                            collections.add(
-                                HomeMoviesCollection(
-                                    collectionNames[i],
-                                    movies = getTVSeries() ?: break
-                                )
-                            )
-                        }
-                        else -> break
-                    }
-                }
-                collectionsAreReady.value = true
-            }
+            loadCollections(collectionNames)
         } catch (ex: Exception) {
 //            TODO exception handler
         } finally {
@@ -118,6 +60,68 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
             }.launchIn(viewModelScope)
         } catch (ex: Exception) {
 //            TODO exception handler
+        }
+    }
+
+    private fun loadCollections(collectionNames: Array<String>) {
+        _stateFlow.value = States.LOADING
+        viewModelScope.launch {
+            for (i in collectionNames.indices) {
+                when (i) {
+                    0 -> {
+                        collections.add(
+                            HomeMoviesCollection(
+                                collectionNames[i],
+                                movies = getPremiers() ?: break
+                            )
+                        )
+                    }
+                    1 -> {
+                        collections.add(
+                            HomeMoviesCollection(
+                                collectionNames[i],
+                                movies = getPopular() ?: break
+                            )
+                        )
+                    }
+                    2 -> {
+                        val collection = getRandomCollectionUseCase.execute()
+                        collections.add(
+                            HomeMoviesCollection(
+                                collection.name,
+                                movies = checkMoviesBeenViewed(collection.movies) ?: break
+                            )
+                        )
+                    }
+                    3 -> {
+                        val collection = getRandomCollectionUseCase.execute()
+                        collections.add(
+                            HomeMoviesCollection(
+                                collection.name,
+                                movies = checkMoviesBeenViewed(collection.movies) ?: break
+                            )
+                        )
+                    }
+                    4 -> {
+                        collections.add(
+                            HomeMoviesCollection(
+                                collectionNames[i],
+                                movies = getTop250() ?: break
+                            )
+                        )
+                    }
+                    5 -> {
+                        collections.add(
+                            HomeMoviesCollection(
+                                collectionNames[i],
+                                movies = getTVSeries() ?: break
+                            )
+                        )
+                    }
+                    else -> break
+                }
+            }
+            collectionsAreReady.value = true
         }
     }
 
