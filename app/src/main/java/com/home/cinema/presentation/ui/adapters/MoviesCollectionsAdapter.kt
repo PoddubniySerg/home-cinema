@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.home.cinema.R
 import com.home.cinema.databinding.MoviesItemCollectionBinding
 import com.home.cinema.domain.constants.Constants
-import com.home.cinema.domain.models.entities.collections.movies.Movie
-import com.home.cinema.model.HomeMoviesCollection
+import com.home.cinema.domain.models.entities.collections.HomeCollection
+import com.home.cinema.domain.models.entities.movies.Movie
 
 class MoviesCollectionsAdapter(
     private val onItemPosterClick: (Movie) -> Unit,
     private val onClickAllButton: () -> Unit
-) : ListAdapter<HomeMoviesCollection, MoviesViewHolder>(MoviesDiffUtilCallback()) {
+) : ListAdapter<HomeCollection, MoviesViewHolder>(MoviesDiffUtilCallback()) {
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -75,17 +75,17 @@ class MoviesCollectionsAdapter(
 class MoviesViewHolder(val binding: MoviesItemCollectionBinding) :
     RecyclerView.ViewHolder(binding.root)
 
-class MoviesDiffUtilCallback : DiffUtil.ItemCallback<HomeMoviesCollection>() {
+class MoviesDiffUtilCallback : DiffUtil.ItemCallback<HomeCollection>() {
     override fun areItemsTheSame(
-        oldItem: HomeMoviesCollection,
-        newItem: HomeMoviesCollection
+        oldItem: HomeCollection,
+        newItem: HomeCollection
     ): Boolean {
         return oldItem.name == newItem.name
     }
 
     override fun areContentsTheSame(
-        oldItem: HomeMoviesCollection,
-        newItem: HomeMoviesCollection
+        oldItem: HomeCollection,
+        newItem: HomeCollection
     ): Boolean {
         return oldItem.name == newItem.name
     }

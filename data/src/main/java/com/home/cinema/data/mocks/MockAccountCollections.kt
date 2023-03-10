@@ -1,6 +1,6 @@
 package com.home.cinema.data.mocks
 
-import com.home.cinema.domain.models.entities.collections.account.AccountCollection
+import com.home.cinema.domain.models.entities.collections.AccountCollection
 
 class MockAccountCollections {
 

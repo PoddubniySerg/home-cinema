@@ -42,12 +42,17 @@
         android:label="HomeFragment"
         tools:layout="@layout/home_fragment">
         <action
-            android:id="@+id/action_homeFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            android:id="@+id/action_homeFragment_to_premiersListPageFragment"
+            app:destination="@id/listPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.home.cinema.presentation.ui.fragments.account.AccountFragment"
         android:label="AccountFragment"
         tools:layout="@layout/account_fragment" />
+    <fragment
+        android:id="@+id/listPageFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.list.ListPageFragment"
+        android:label="ListPageFragment"
+        tools:layout="@layout/list_page_fragment" />
 </navigation>

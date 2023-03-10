@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.home.cinema.R
 import com.home.cinema.databinding.HomeFragmentBinding
-import com.home.cinema.domain.models.entities.collections.movies.Movie
+import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.presentation.ui.adapters.MoviesCollectionsAdapter
 import com.home.cinema.presentation.viewmodels.HomeViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -41,8 +43,6 @@ class HomeFragment : Fragment() {
         viewModel.collectionsFlow.onEach {
             adapter?.submitList(it)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
-
-        viewModel.getCollections()
     }
 
     override fun onDestroyView() {
@@ -52,5 +52,7 @@ class HomeFragment : Fragment() {
 
     private fun onMovieClick(movie: Movie) {}
 
-    private fun onClickAllButton() {}
+    private fun onClickAllButton() {
+        findNavController().navigate(R.id.action_homeFragment_to_premiersListPageFragment)
+    }
 }

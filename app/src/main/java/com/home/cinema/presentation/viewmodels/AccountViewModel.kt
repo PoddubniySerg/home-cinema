@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.home.cinema.data.mocks.MockAccountCollections
 import com.home.cinema.data.mocks.MockPremiers
-import com.home.cinema.domain.models.entities.collections.account.AccountCollection
-import com.home.cinema.domain.models.entities.collections.movies.Movie
+import com.home.cinema.domain.models.entities.collections.AccountCollection
+import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.enums.States
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel

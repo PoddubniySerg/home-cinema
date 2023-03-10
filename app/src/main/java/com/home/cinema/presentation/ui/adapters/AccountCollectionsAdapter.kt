@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.home.cinema.R
 import com.home.cinema.databinding.AccountItemCollectionBinding
-import com.home.cinema.domain.models.entities.collections.account.AccountCollection
+import com.home.cinema.domain.models.entities.collections.AccountCollection
 
 class AccountCollectionsAdapter(
     private val onItemClick: (AccountCollection) -> Unit

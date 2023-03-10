@@ -5,14 +5,19 @@
     android:layout_width="146dp"
     android:layout_height="146dp"
     android:layout_margin="16dp"
-    android:background="@drawable/account_item_collection_background_shape">
+    android:background="?attr/selectableItemBackground">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/account_item_collection_background_shape" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/removeCollectionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="@null"
+        android:background="?attr/selectableItemBackground"
         android:src="@drawable/account_item_collection_icon_remove_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

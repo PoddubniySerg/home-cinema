@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.home.cinema.databinding.AccountFragmentBinding
-import com.home.cinema.domain.models.entities.collections.account.AccountCollection
-import com.home.cinema.domain.models.entities.collections.movies.Movie
+import com.home.cinema.domain.models.entities.collections.AccountCollection
+import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.enums.States
 import com.home.cinema.presentation.ui.adapters.AccountCollectionsAdapter
 import com.home.cinema.presentation.ui.adapters.MovieItemAdapter
