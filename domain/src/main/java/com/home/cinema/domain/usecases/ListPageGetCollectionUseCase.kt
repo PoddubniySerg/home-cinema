@@ -1,9 +1,12 @@
 package com.home.cinema.domain.usecases
 
+import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.domain.models.entities.movies.PremierMovie
+import com.home.cinema.domain.models.params.MovieBeenViewedParam
 import com.home.cinema.domain.models.params.listpage.*
 import com.home.cinema.domain.models.results.GetMoviesByPageResult
 import com.home.cinema.domain.repositories.ListPageRepository
+import com.home.cinema.domain.repositories.MovieBeenViewedRepository
 import com.home.cinema.domain.util.CollectionType
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -19,6 +22,9 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
     @Inject
     protected lateinit var moviesRepository: ListPageRepository
 
+    @Inject
+    protected lateinit var movieBeenViewedRepository: MovieBeenViewedRepository
+
     suspend fun execute(page: Int, collectionType: CollectionType): GetMoviesByPageResult {
         return when (collectionType) {
             CollectionType.Popular -> getPopular(page)
@@ -29,13 +35,20 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
         }
     }
 
+    private suspend fun checkMoviesSeen(movies: List<Movie>) {
+        movies.forEach { movie ->
+            movie.seen = movieBeenViewedRepository.beenViewed(MovieBeenViewedParam(movie.id))
+        }
+    }
+
     private suspend fun getPopular(page: Int): GetMoviesByPageResult {
         try {
-            return GetMoviesByPageResult(
+            val movies =
                 moviesRepository.getPopular(
                     ListPageGetPopularByPageParam(page)
                 )
-            )
+            movies?.let { checkMoviesSeen(it) }
+            return GetMoviesByPageResult(movies)
         } catch (ex: Exception) {
 //            TODO handle exception
             throw RuntimeException("GetMoviesByPageUseCase exception")
@@ -47,6 +60,7 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
             val dateFrom = LocalDate.now()
             val dateTo = LocalDate.from(dateFrom.plusDays(MAX_DAYS_PREMIERS))
             val movies = getPremiers(dateFrom, dateTo, page)
+            checkMoviesSeen(movies)
             return GetMoviesByPageResult(movies)
         } catch (ex: Exception) {
 //            TODO handle exception
@@ -56,11 +70,12 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
 
     private suspend fun getSeries(page: Int): GetMoviesByPageResult {
         try {
-            return GetMoviesByPageResult(
+            val movies =
                 moviesRepository.getSeries(
                     ListPageGetSeriesParam(page)
                 )
-            )
+            movies?.let { checkMoviesSeen(it) }
+            return GetMoviesByPageResult(movies)
         } catch (ex: Exception) {
 //            TODO handle exception
             throw RuntimeException("GetMoviesByPageUseCase exception")
@@ -69,11 +84,12 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
 
     private suspend fun getTop250(page: Int): GetMoviesByPageResult {
         try {
-            return GetMoviesByPageResult(
+            val movies =
                 moviesRepository.getTop250(
                     ListPageGetTop250Param(page)
                 )
-            )
+            movies?.let { checkMoviesSeen(it) }
+            return GetMoviesByPageResult(movies)
         } catch (ex: Exception) {
 //            TODO handle exception
             throw RuntimeException("GetMoviesByPageUseCase exception")
@@ -85,7 +101,7 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
         type: CollectionType.Random
     ): GetMoviesByPageResult {
         try {
-            return GetMoviesByPageResult(
+            val movies =
                 moviesRepository.getMoviesByFilter(
                     ListPageGetMoviesByFilterParam(
                         type.country?.id ?: throw RuntimeException("Country is null"),
@@ -93,7 +109,8 @@ open class ListPageGetCollectionUseCase @Inject constructor() {
                         page
                     )
                 )
-            )
+            movies?.let { checkMoviesSeen(it) }
+            return GetMoviesByPageResult(movies)
         } catch (ex: Exception) {
 //            TODO handle exception
             throw RuntimeException("GetMoviesByPageUseCase exception")

@@ -66,12 +66,10 @@ open class ListPageViewModel @Inject constructor() : ViewModel() {
             if (page > 1) {
                 _stateFlow.value = States.LOADING
             }
-            checkMoviesBeenViewed(
-                listPageGetCollectionUseCase.execute(
-                    page,
-                    collectionType
-                ).movies
-            )
+            listPageGetCollectionUseCase.execute(
+                page,
+                collectionType
+            ).movies
                 ?: emptyList()
         } catch (ex: Exception) {
             //            TODO exception handler
@@ -79,15 +77,6 @@ open class ListPageViewModel @Inject constructor() : ViewModel() {
         } finally {
             _stateFlow.value = States.COMPLETE
         }
-    }
-
-    private suspend fun checkMoviesBeenViewed(movies: List<Movie>?): List<Movie>? {
-        viewModelScope.launch {
-            movies?.forEach { movie ->
-                movie.seen = movieCheckBeenViewedUseCase.execute(movie.id).movieBeenViewed
-            }
-        }.join()
-        return movies
     }
 
     private class ListPagePagingSource(private val getMoviesByPage: suspend (Int) -> List<Movie>) :
