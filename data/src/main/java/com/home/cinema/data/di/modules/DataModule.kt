@@ -1,13 +1,12 @@
 package com.home.cinema.data.di.modules
 
-import com.home.cinema.data.repositories.page.HomePageRepositoryImpl
+import com.home.cinema.data.repositories.HomePageRepositoryImpl
 import com.home.cinema.data.repositories.MovieBeenViewedRepositoryImpl
-import com.home.cinema.data.repositories.page.ListPageRepositoryImpl
-import com.home.cinema.data.repositories.page.onboarding.OnBoardingSharedPrefsRepository
+import com.home.cinema.data.repositories.OnBoardingRepositoryImpl
+import com.home.cinema.data.repositories.ListPageRepositoryImpl
 import com.home.cinema.domain.repositories.HomePageRepository
-import com.home.cinema.domain.repositories.page.ListPageRepository
-import com.home.cinema.domain.repositories.page.MovieBeenViewedRepository
-import com.home.cinema.domain.repositories.page.onboarding.OnBoardingRepository
+import com.home.cinema.domain.repositories.ListPageRepository
+import com.home.cinema.domain.repositories.MovieBeenViewedRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +17,8 @@ import dagger.hilt.components.SingletonComponent
 class DataModule {
 
     @Provides
-    fun provideOnBoardingRepository(): OnBoardingRepository = OnBoardingSharedPrefsRepository()
+    fun provideOnBoardingRepository(): com.home.cinema.domain.repositories.OnBoardingRepository =
+        OnBoardingRepositoryImpl()
 
     @Provides
     fun provideHomePageRepository(): HomePageRepository = HomePageRepositoryImpl()

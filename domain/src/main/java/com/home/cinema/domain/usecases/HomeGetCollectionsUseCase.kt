@@ -4,12 +4,12 @@ import com.home.cinema.domain.constants.Constants
 import com.home.cinema.domain.models.entities.collections.HomeCollection
 import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.domain.models.entities.movies.PremierMovie
-import com.home.cinema.domain.models.params.page.home.HomeGetMoviesByFilterParam
-import com.home.cinema.domain.models.params.page.home.HomeGetPremiersParam
-import com.home.cinema.domain.models.params.page.home.MovieBeenViewedParam
-import com.home.cinema.domain.models.results.page.HomeGetCollectionsResult
+import com.home.cinema.domain.models.params.MovieBeenViewedParam
+import com.home.cinema.domain.models.params.home.HomeGetMoviesByFilterParam
+import com.home.cinema.domain.models.params.home.HomeGetPremiersParam
+import com.home.cinema.domain.models.results.HomeGetCollectionsResult
 import com.home.cinema.domain.repositories.HomePageRepository
-import com.home.cinema.domain.repositories.page.MovieBeenViewedRepository
+import com.home.cinema.domain.repositories.MovieBeenViewedRepository
 import com.home.cinema.domain.util.CollectionType
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -125,8 +125,8 @@ open class HomeGetCollectionsUseCase @Inject constructor() {
             )
         )
         val type = CollectionType.Random(
-            country?.country ?: "Unknown country",
-            genre?.genre ?: "Unknown genre"
+            country,
+            genre
         )
         val movies = moviesRepository.getMoviesByFilter(
             HomeGetMoviesByFilterParam(
@@ -140,7 +140,7 @@ open class HomeGetCollectionsUseCase @Inject constructor() {
         return HomeCollectionImpl(
             ++counterId,
             type,
-            "${type.genre} ${type.country}",
+            "${type.genre?.genre ?: "\"Unknown genre\""} ${type.country?.country ?: "Unknown country"}",
             movies.size,
             movies
         )

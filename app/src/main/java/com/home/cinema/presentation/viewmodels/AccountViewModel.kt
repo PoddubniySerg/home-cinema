@@ -21,7 +21,7 @@ class AccountViewModel @Inject constructor() : ViewModel() {
     private val movies = MockPremiers()
     private val collections = MockAccountCollections()
 
-    private val _stateFlow = MutableStateFlow(States.STARTING)
+    private val _stateFlow = MutableStateFlow(States.START)
     val stateFlow = _stateFlow.asStateFlow()
 
     private val _moviesChannel = Channel<List<Movie>>()

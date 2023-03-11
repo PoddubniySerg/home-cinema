@@ -16,7 +16,7 @@ import com.home.cinema.domain.models.entities.movies.Movie
 
 class MoviesCollectionsAdapter(
     private val onItemPosterClick: (Movie) -> Unit,
-    private val onClickAllButton: () -> Unit
+    private val onClickAllButton: (HomeCollection) -> Unit
 ) : ListAdapter<HomeCollection, MoviesViewHolder>(MoviesDiffUtilCallback()) {
 
     private val viewPool = RecyclerView.RecycledViewPool()
@@ -33,7 +33,7 @@ class MoviesCollectionsAdapter(
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
         val item = getItem(position)
-        val postersAdapter = MovieItemAdapter(onItemPosterClick, onClickAllButton)
+        val postersAdapter = MovieItemAdapter(item, onItemPosterClick, onClickAllButton)
         with(holder.binding) {
             if (item.movies.size < Constants.MAX_MOVIES_COLLECTION_SIZE) {
                 buttonAllMovies.visibility = View.GONE
@@ -41,7 +41,7 @@ class MoviesCollectionsAdapter(
             } else {
                 buttonAllMovies.visibility = View.VISIBLE
                 buttonAllMovies.isActivated = true
-                buttonAllMovies.setOnClickListener { onClickAllButton.invoke() }
+                buttonAllMovies.setOnClickListener { onClickAllButton(item) }
             }
 
             val lastIndexItems = itemCount - 1

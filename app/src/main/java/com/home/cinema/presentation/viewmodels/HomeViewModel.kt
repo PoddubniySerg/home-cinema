@@ -17,7 +17,7 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
     @Inject
     protected lateinit var homeGetCollectionsUseCase: HomeGetCollectionsUseCase
 
-    private val _stateFlow = MutableStateFlow(States.STARTING)
+    private val _stateFlow = MutableStateFlow(States.START)
     val stateFlow = _stateFlow.asStateFlow()
 
     private val _collectionsFlow = MutableStateFlow(emptyList<HomeCollection>())
@@ -26,6 +26,7 @@ open class HomeViewModel @Inject constructor() : ViewModel() {
     fun getCollections(collectionNames: Array<String>) {
         viewModelScope.launch {
             try {
+                _stateFlow.value = States.LOADING
                 _collectionsFlow.value =
                     homeGetCollectionsUseCase.execute(collectionNames.asList()).collections
             } catch (ex: Exception) {

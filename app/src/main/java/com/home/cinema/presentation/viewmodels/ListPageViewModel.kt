@@ -6,6 +6,7 @@ import androidx.paging.*
 import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.domain.usecases.ListPageGetCollectionUseCase
 import com.home.cinema.domain.usecases.MovieCheckBeenViewedUseCase
+import com.home.cinema.domain.util.CollectionType
 import com.home.cinema.enums.States
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -30,38 +31,63 @@ open class ListPageViewModel @Inject constructor() : ViewModel() {
     @Inject
     protected lateinit var movieCheckBeenViewedUseCase: MovieCheckBeenViewedUseCase
 
-    private val _stateFlow = MutableStateFlow(States.STARTING)
+    private val _stateFlow = MutableStateFlow(States.START)
     val stateFlow = _stateFlow.asStateFlow()
 
-    private val _premiersFlow = Channel<List<Movie>>()
-    val premiersFlow = _premiersFlow.receiveAsFlow()
+    private lateinit var pager: Pager<Int, Movie>
+    val pagedMovies: Flow<PagingData<Movie>> get() = pager.flow.cachedIn(viewModelScope)
 
-    suspend fun getPremiers() {
-        try {
-            _stateFlow.value = States.LOADING
-            _premiersFlow.send(
-                checkMoviesBeenViewed(listPageGetCollectionUseCase.getPremiers().movies)
-                    ?: emptyList()
+    private val _collectionTypeChannel = Channel<CollectionType>()
+    val collectionTypeFlow = _collectionTypeChannel.receiveAsFlow()
+
+    private lateinit var _collectionType: CollectionType
+    private val collectionType get() = _collectionType
+
+    private lateinit var _collectionName: String
+    val collectionName get() = _collectionName
+
+    fun openCollection(collectionType: CollectionType, collectionName: String) {
+        _collectionType = collectionType
+        _collectionName = collectionName
+        pager =
+            Pager(
+                config = PagingConfig(pageSize = PAGE_SIZE),
+                pagingSourceFactory = { ListPagePagingSource(getMoviesByPage = this::getMovies) }
             )
+        try {
+            viewModelScope.launch { _collectionTypeChannel.send(collectionType) }
         } catch (ex: Exception) {
 //            TODO exception handler
+        }
+    }
+
+    private suspend fun getMovies(page: Int): List<Movie> {
+        return try {
+            if (page > 1) {
+                _stateFlow.value = States.LOADING
+            }
+            checkMoviesBeenViewed(
+                listPageGetCollectionUseCase.execute(
+                    page,
+                    collectionType
+                ).movies
+            )
+                ?: emptyList()
+        } catch (ex: Exception) {
+            //            TODO exception handler
+            emptyList()
         } finally {
             _stateFlow.value = States.COMPLETE
         }
     }
 
-    val pagedMovies: Flow<PagingData<Movie>> = Pager(
-        config = PagingConfig(pageSize = PAGE_SIZE),
-        pagingSourceFactory = {
-            ListPagePagingSource(
-                getMoviesByPage = { page -> getMovies(page) }
-            )
-        }
-    ).flow.cachedIn(viewModelScope)
-
-    private suspend fun getMovies(page: Int): List<Movie> {
-        return checkMoviesBeenViewed(listPageGetCollectionUseCase.getMovies(page).movies)
-            ?: emptyList()
+    private suspend fun checkMoviesBeenViewed(movies: List<Movie>?): List<Movie>? {
+        viewModelScope.launch {
+            movies?.forEach { movie ->
+                movie.seen = movieCheckBeenViewedUseCase.execute(movie.id).movieBeenViewed
+            }
+        }.join()
+        return movies
     }
 
     private class ListPagePagingSource(private val getMoviesByPage: suspend (Int) -> List<Movie>) :
@@ -87,14 +113,5 @@ open class ListPageViewModel @Inject constructor() : ViewModel() {
                 }
             )
         }
-    }
-
-    private suspend fun checkMoviesBeenViewed(movies: List<Movie>?): List<Movie>? {
-        viewModelScope.launch {
-            movies?.forEach { movie ->
-                movie.seen = movieCheckBeenViewedUseCase.execute(movie.id).movieBeenViewed
-            }
-        }.join()
-        return movies
     }
 }

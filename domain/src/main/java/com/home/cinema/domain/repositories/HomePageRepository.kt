@@ -3,8 +3,8 @@ package com.home.cinema.domain.repositories
 import com.home.cinema.domain.models.entities.filters.CountriesAndGenres
 import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.domain.models.entities.movies.PremierMovie
-import com.home.cinema.domain.models.params.page.home.HomeGetMoviesByFilterParam
-import com.home.cinema.domain.models.params.page.home.HomeGetPremiersParam
+import com.home.cinema.domain.models.params.home.HomeGetMoviesByFilterParam
+import com.home.cinema.domain.models.params.home.HomeGetPremiersParam
 
 interface HomePageRepository {
 

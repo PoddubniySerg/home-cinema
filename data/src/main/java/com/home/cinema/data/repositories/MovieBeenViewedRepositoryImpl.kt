@@ -2,8 +2,8 @@ package com.home.cinema.data.repositories
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import com.home.cinema.data.device.sharedpreferences.DeviceMemory
-import com.home.cinema.domain.models.params.page.home.MovieBeenViewedParam
-import com.home.cinema.domain.repositories.page.MovieBeenViewedRepository
+import com.home.cinema.domain.models.params.MovieBeenViewedParam
+import com.home.cinema.domain.repositories.MovieBeenViewedRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel

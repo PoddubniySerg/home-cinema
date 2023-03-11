@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loaderFragment"
-        android:name="com.home.cinema.presentation.ui.fragments.start.LoaderFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.LoaderFragment"
         android:label="LoaderFragment"
         tools:layout="@layout/loader_fragment">
         <argument
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.home.cinema.presentation.ui.fragments.start.OnboardingFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.onboarding.OnboardingFragment"
         android:label="OnBoardingFragment">
         <argument
             android:name="@string/bottom_navigation_is_hidden_nav_graph_argument"
@@ -38,21 +38,21 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.home.cinema.presentation.ui.fragments.home.HomeFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/home_fragment">
         <action
-            android:id="@+id/action_homeFragment_to_premiersListPageFragment"
+            android:id="@+id/action_homeFragment_to_listPageFragment"
             app:destination="@id/listPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.home.cinema.presentation.ui.fragments.account.AccountFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.AccountFragment"
         android:label="AccountFragment"
         tools:layout="@layout/account_fragment" />
     <fragment
         android:id="@+id/listPageFragment"
-        android:name="com.home.cinema.presentation.ui.fragments.list.ListPageFragment"
+        android:name="com.home.cinema.presentation.ui.fragments.ListPageFragment"
         android:label="ListPageFragment"
         tools:layout="@layout/list_page_fragment" />
 </navigation>

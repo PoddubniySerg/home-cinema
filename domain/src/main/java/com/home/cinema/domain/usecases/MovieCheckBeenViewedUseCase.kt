@@ -1,8 +1,8 @@
 package com.home.cinema.domain.usecases
 
-import com.home.cinema.domain.models.params.page.home.MovieBeenViewedParam
-import com.home.cinema.domain.models.results.page.MovieCheckBeenViewedResult
-import com.home.cinema.domain.repositories.page.MovieBeenViewedRepository
+import com.home.cinema.domain.models.params.MovieBeenViewedParam
+import com.home.cinema.domain.models.results.MovieCheckBeenViewedResult
+import com.home.cinema.domain.repositories.MovieBeenViewedRepository
 import javax.inject.Inject
 
 open class MovieCheckBeenViewedUseCase @Inject constructor() {

@@ -12,13 +12,15 @@ import com.bumptech.glide.Glide
 import com.home.cinema.R
 import com.home.cinema.databinding.MoviesItemMovieBinding
 import com.home.cinema.databinding.MoviesItemShowAllBinding
+import com.home.cinema.domain.models.entities.collections.HomeCollection
 import com.home.cinema.domain.models.entities.movies.GenreString
 import com.home.cinema.domain.models.entities.movies.Movie
 import java.util.*
 
 class MovieItemAdapter(
+    private val collection: HomeCollection,
     private val onItemPosterClick: (Movie) -> Unit,
-    private val onClickAllButton: () -> Unit
+    private val onClickAllButton: (HomeCollection) -> Unit
 ) : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -91,7 +93,7 @@ class MovieItemAdapter(
     private fun inflateShowAllItem(binding: MoviesItemShowAllBinding) {
         with(binding) {
             buttonShowAllMovies.setOnClickListener {
-                onClickAllButton.invoke()
+                onClickAllButton(collection)
             }
         }
     }
