@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -15,14 +14,17 @@ import com.home.cinema.domain.models.entities.movies.Movie
 import com.home.cinema.presentation.ui.adapters.home.MoviesCollectionsAdapter
 import com.home.cinema.presentation.viewmodels.HomeViewModel
 import com.home.cinema.presentation.viewmodels.ListPageViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+@AndroidEntryPoint
+class HomeFragment @Inject constructor() :
+    BindFragment<HomeFragmentBinding>(HomeFragmentBinding::inflate) {
 
     private val homeViewModel by activityViewModels<HomeViewModel>()
     private val listViewModel by activityViewModels<ListPageViewModel>()
-    private var binding: HomeFragmentBinding? = null
     private var adapter: MoviesCollectionsAdapter? = null
 
     override fun onCreateView(
@@ -30,15 +32,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = HomeFragmentBinding.inflate(inflater, container, false)
         adapter = MoviesCollectionsAdapter(this::onMovieClick, this::onClickAllButton)
-        return binding!!.root
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding!!.moviesList.adapter = adapter
+        binding.moviesList.adapter = adapter
 
         homeViewModel.collectionsFlow.onEach {
             adapter?.submitList(it)
@@ -47,11 +48,6 @@ class HomeFragment : Fragment() {
         listViewModel.collectionTypeFlow.onEach {
             findNavController().navigate(R.id.action_homeFragment_to_listPageFragment)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
     private fun onMovieClick(movie: Movie) {}

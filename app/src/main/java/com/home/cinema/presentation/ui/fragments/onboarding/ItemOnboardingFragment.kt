@@ -4,15 +4,16 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import androidx.annotation.DrawableRes
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.home.cinema.databinding.OnboardingFragmentItemBinding
+import com.home.cinema.presentation.ui.fragments.BindFragment
 import com.home.cinema.presentation.viewmodels.OnBoardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ItemOnboardingFragment @Inject constructor() : Fragment() {
+class ItemOnboardingFragment @Inject constructor() :
+    BindFragment<OnboardingFragmentItemBinding>(OnboardingFragmentItemBinding::inflate) {
 
     companion object {
         private const val IMAGE_ID_KEY = "image_id"
@@ -38,33 +39,18 @@ class ItemOnboardingFragment @Inject constructor() : Fragment() {
     }
 
     private val viewModel by activityViewModels<OnBoardingViewModel>()
-    private var binding: OnboardingFragmentItemBinding? = null
     private var startX = START_X_SWIPE
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = OnboardingFragmentItemBinding.inflate(inflater, container, false)
-        return binding!!.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (arguments?.getBoolean(IS_LAST_PAGE_KEY) == true) setLeftSwipeListener()
-        binding?.poster?.setImageResource(requireArguments().getInt(IMAGE_ID_KEY))
-        binding?.message?.text = requireArguments().getString(MESSAGE_KEY)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+        binding.poster.setImageResource(requireArguments().getInt(IMAGE_ID_KEY))
+        binding.message.text = requireArguments().getString(MESSAGE_KEY)
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun setLeftSwipeListener() {
-        binding!!.root.setOnTouchListener { _, event ->
+        binding.root.setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     startX = event.x

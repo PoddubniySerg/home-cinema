@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -23,12 +22,13 @@ import com.home.cinema.presentation.viewmodels.ListPageViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class ListPageFragment : Fragment() {
+class ListPageFragment @Inject constructor() :
+    BindFragment<ListPageFragmentBinding>(ListPageFragmentBinding::inflate) {
 
     private val viewModel by activityViewModels<ListPageViewModel>()
-    private var binding: ListPageFragmentBinding? = null
     private lateinit var adapter: ListPageAdapter
 
     override fun onCreateView(
@@ -36,9 +36,8 @@ class ListPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = ListPageFragmentBinding.inflate(inflater, container, false)
         adapter = ListPageAdapter { movie -> onItemClick(movie) }
-        return binding!!.root
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,17 +48,12 @@ class ListPageFragment : Fragment() {
         initObservers()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
     private fun initToolbar() {
-        val toolbar = binding!!.listPageToolbar
+        val toolbar = binding.listPageToolbar
         toolbar.setupWithNavController(findNavController())
         toolbar.title = null
         toolbar.setNavigationIcon(R.drawable.toolbar_navigation_icon)
-        binding?.listPageToolbarTitle?.text = viewModel.collectionName
+        binding.listPageToolbarTitle.text = viewModel.collectionName
     }
 
     private fun initRecyclerView() {
@@ -83,18 +77,17 @@ class ListPageFragment : Fragment() {
             )!!
         )
 
-        val recyclerView = binding!!.moviesRecyclerView
+        val recyclerView = binding.moviesRecyclerView
         recyclerView.addItemDecoration(verticalDividerItemDecoration)
         recyclerView.addItemDecoration(horizontalDividerItemDecoration)
         recyclerView.adapter = adapter
     }
 
     private fun initSwipeRefresh() {
-        val swipeRefresh = binding!!.swipeRefresh
+        val swipeRefresh = binding.swipeRefresh
         swipeRefresh.setColorSchemeResources(R.color.progress_bar_color)
         swipeRefresh.setOnRefreshListener { adapter.refresh() }
     }
-
 
 
     private fun initObservers() {
@@ -104,7 +97,7 @@ class ListPageFragment : Fragment() {
 
         adapter.loadStateFlow.onEach {
             val state = it.refresh
-            binding!!.swipeRefresh.isRefreshing = state == LoadState.Loading
+            binding.swipeRefresh.isRefreshing = state == LoadState.Loading
             when (state) {
                 is LoadState.Error -> {
                     Toast.makeText(activity, state.error.message, Toast.LENGTH_SHORT).show()
@@ -117,9 +110,9 @@ class ListPageFragment : Fragment() {
 
         viewModel.stateFlow.onEach { state ->
             if (state == States.LOADING) {
-                binding?.progressBar?.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.VISIBLE
             } else {
-                binding?.progressBar?.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
     }

@@ -15,6 +15,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.home.cinema.R
 import com.home.cinema.databinding.OnboardingFragmentBinding
+import com.home.cinema.presentation.ui.fragments.BindFragment
 import com.home.cinema.presentation.viewmodels.OnBoardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
@@ -23,10 +24,10 @@ import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class OnboardingFragment @Inject constructor() : Fragment() {
+class OnboardingFragment @Inject constructor() :
+    BindFragment<OnboardingFragmentBinding>(OnboardingFragmentBinding::inflate) {
 
     private val viewModel by activityViewModels<OnBoardingViewModel>()
-    private var _binding: OnboardingFragmentBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,30 +48,24 @@ class OnboardingFragment @Inject constructor() : Fragment() {
             viewModel.isFirstLaunch()
         }
 
-        _binding = OnboardingFragmentBinding.inflate(inflater, container, false)
-        return _binding!!.root
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        _binding!!.skipButton.setOnClickListener {
+        binding.skipButton.setOnClickListener {
             viewModel.exit()
         }
 
         viewPagerInit()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     private fun viewPagerInit() {
-        val viewPager = _binding!!.viewPager
+        val viewPager = binding.viewPager
         val adapter = OnBoardingAdapter(fragment = this)
         viewPager.adapter = adapter
-        val tabLayout = _binding!!.tabLayout
+        val tabLayout = binding.tabLayout
         TabLayoutMediator(tabLayout, viewPager) { tab, _ ->
             tab.view.background =
                 ResourcesCompat.getDrawable(

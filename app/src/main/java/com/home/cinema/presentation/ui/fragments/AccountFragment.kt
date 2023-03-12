@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.home.cinema.R
@@ -18,13 +17,14 @@ import com.home.cinema.presentation.viewmodels.AccountViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class AccountFragment : Fragment() {
+class AccountFragment @Inject constructor() :
+    BindFragment<AccountFragmentBinding>(AccountFragmentBinding::inflate) {
 
     private val viewModel by viewModels<AccountViewModel>()
 
-    private var binding: AccountFragmentBinding? = null
     private var seenMoviesAdapter: AccountMoviesAdapter? = null
     private var interestedMoviesAdapter: AccountMoviesAdapter? = null
     private var collectionsAdapter: AccountCollectionsAdapter? = null
@@ -34,7 +34,6 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = AccountFragmentBinding.inflate(inflater, container, false)
         seenMoviesAdapter = AccountMoviesAdapter(
             { movie -> movieItemOnclick(movie) },
             { viewModel.clearSeen() }
@@ -46,15 +45,15 @@ class AccountFragment : Fragment() {
         collectionsAdapter = AccountCollectionsAdapter { accountCollection ->
             accountCollectionItemOnclick(accountCollection)
         }
-        return binding!!.root
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding!!.seenMoviesRecyclerView.adapter = seenMoviesAdapter
-        binding!!.wereInterestedRecyclerView.adapter = interestedMoviesAdapter
-        binding!!.userCollectionsRecyclerView.adapter = collectionsAdapter
+        binding.seenMoviesRecyclerView.adapter = seenMoviesAdapter
+        binding.wereInterestedRecyclerView.adapter = interestedMoviesAdapter
+        binding.userCollectionsRecyclerView.adapter = collectionsAdapter
 
         viewModel.stateFlow.onEach { state ->
             when (state) {
@@ -65,13 +64,13 @@ class AccountFragment : Fragment() {
         }.launchIn(viewLifecycleOwner.lifecycleScope)
 
         viewModel.interestedFlow.onEach { movies ->
-            binding!!.countWereInterestedMoviesButton.text =
+            binding.countWereInterestedMoviesButton.text =
                 resources.getString(R.string.account_show_all_button_text, movies.size)
             interestedMoviesAdapter!!.submitList(movies)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
 
         viewModel.seenFlow.onEach { movies ->
-            binding!!.countSeenMoviesButton.text =
+            binding.countSeenMoviesButton.text =
                 resources.getString(R.string.account_show_all_button_text, movies.size)
             seenMoviesAdapter!!.submitList(movies)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
@@ -81,11 +80,6 @@ class AccountFragment : Fragment() {
         }.launchIn(viewLifecycleOwner.lifecycleScope)
 
         viewModel.getCollections()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
     private fun movieItemOnclick(movie: Movie) {}
