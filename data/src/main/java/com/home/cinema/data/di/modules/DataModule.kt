@@ -1,9 +1,7 @@
 package com.home.cinema.data.di.modules
 
-import com.home.cinema.data.repositories.HomePageRepositoryImpl
-import com.home.cinema.data.repositories.MovieBeenViewedRepositoryImpl
-import com.home.cinema.data.repositories.OnBoardingRepositoryImpl
-import com.home.cinema.data.repositories.ListPageRepositoryImpl
+import com.home.cinema.data.repositories.*
+import com.home.cinema.domain.repositories.AccountPageRepository
 import com.home.cinema.domain.repositories.HomePageRepository
 import com.home.cinema.domain.repositories.ListPageRepository
 import com.home.cinema.domain.repositories.MovieBeenViewedRepository
@@ -29,4 +27,7 @@ class DataModule {
     @Provides
     fun provideMovieBeenViewedRepository(): MovieBeenViewedRepository =
         MovieBeenViewedRepositoryImpl()
+
+    @Provides
+    fun provideAccountPageRepository(): AccountPageRepository = AccountPageRepositoryImpl()
 }

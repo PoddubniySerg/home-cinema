@@ -1,4 +1,4 @@
-package com.home.cinema.presentation.ui.adapters
+package com.home.cinema.presentation.ui.adapters.account
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,17 +10,15 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.home.cinema.R
+import com.home.cinema.databinding.MoviesItemClearAllBinding
 import com.home.cinema.databinding.MoviesItemMovieBinding
-import com.home.cinema.databinding.MoviesItemShowAllBinding
-import com.home.cinema.domain.models.entities.collections.HomeCollection
 import com.home.cinema.domain.models.entities.movies.GenreString
 import com.home.cinema.domain.models.entities.movies.Movie
 import java.util.*
 
-class MovieItemAdapter(
-    private val collection: HomeCollection,
-    private val onItemPosterClick: (Movie) -> Unit,
-    private val onClickAllButton: (HomeCollection) -> Unit
+class AccountMoviesAdapter(
+    private val onItemMovieClick: (Movie) -> Unit,
+    private val clearCollection: () -> Unit
 ) : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -35,8 +33,8 @@ class MovieItemAdapter(
                 )
             }
             else -> {
-                return ShowAllViewHolder(
-                    MoviesItemShowAllBinding.inflate(
+                return ClearCollectionViewHolder(
+                    MoviesItemClearAllBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
@@ -49,7 +47,7 @@ class MovieItemAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is MovieViewHolder -> inflateMovie(position, holder.binding)
-            is ShowAllViewHolder -> inflateShowAllItem(holder.binding)
+            is ClearCollectionViewHolder -> inflateClearAllItem(holder.binding)
         }
     }
 
@@ -85,15 +83,15 @@ class MovieItemAdapter(
             setGenres(movie.genres, genresMovie)
 
             root.setOnClickListener {
-                onItemPosterClick(movie)
+                onItemMovieClick(movie)
             }
         }
     }
 
-    private fun inflateShowAllItem(binding: MoviesItemShowAllBinding) {
+    private fun inflateClearAllItem(binding: MoviesItemClearAllBinding) {
         with(binding) {
             buttonShowAllMovies.setOnClickListener {
-                onClickAllButton(collection)
+                clearCollection()
             }
         }
     }
@@ -156,7 +154,7 @@ class MovieItemAdapter(
 class MovieViewHolder(val binding: MoviesItemMovieBinding) :
     RecyclerView.ViewHolder(binding.root)
 
-class ShowAllViewHolder(val binding: MoviesItemShowAllBinding) :
+class ClearCollectionViewHolder(val binding: MoviesItemClearAllBinding) :
     RecyclerView.ViewHolder(binding.root)
 
 class MovieDiffUtilCallback : DiffUtil.ItemCallback<Movie>() {

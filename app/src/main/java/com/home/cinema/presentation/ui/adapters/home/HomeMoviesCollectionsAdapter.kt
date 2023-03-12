@@ -1,4 +1,4 @@
-package com.home.cinema.presentation.ui.adapters
+package com.home.cinema.presentation.ui.adapters.home
 
 import android.view.LayoutInflater
 import android.view.View

@@ -14,6 +14,7 @@
     <string name="account_were_you_interested_collections_box_name">Were you interested</string>
     <string name="account_favorite_collection_name">Favorite</string>
     <string name="account_will_watch_collection_name">I want to see</string>
+    <string name="account_show_all_button_text" translatable="false">%d  ></string>
 
     <string-array name="on_boarding_messages">
         <item>Find out\nby premieres</item>

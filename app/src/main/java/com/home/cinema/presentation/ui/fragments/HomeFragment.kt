@@ -12,7 +12,7 @@ import com.home.cinema.R
 import com.home.cinema.databinding.HomeFragmentBinding
 import com.home.cinema.domain.models.entities.collections.HomeCollection
 import com.home.cinema.domain.models.entities.movies.Movie
-import com.home.cinema.presentation.ui.adapters.MoviesCollectionsAdapter
+import com.home.cinema.presentation.ui.adapters.home.MoviesCollectionsAdapter
 import com.home.cinema.presentation.viewmodels.HomeViewModel
 import com.home.cinema.presentation.viewmodels.ListPageViewModel
 import kotlinx.coroutines.flow.launchIn

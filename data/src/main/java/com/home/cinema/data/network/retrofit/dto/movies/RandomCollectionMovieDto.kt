@@ -15,7 +15,7 @@ class RandomCollectionMovieDto(
     @Json(name = "ratingKinopoisk") override val rating: String?,
     @Json(name = "posterUrlPreview") override val posterUrlPreview: String?,
     @Json(name = "countries") val countries: List<CountryDto>?,
-    @Json(name = "posterUrl") val posterUrl: String?,
+    @Json(name = "posterUrl") override val posterUrl: String?,
     @Json(ignore = true) override var seen: Boolean = false,
     @Json(name = "imdbId") val imdbId: String?,
     @Json(name = "nameOriginal") val nameOriginal: String?,
